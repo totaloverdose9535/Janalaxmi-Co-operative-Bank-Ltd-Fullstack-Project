@@ -1,0 +1,278 @@
+<%- include("navbar.ejs") %>
+
+<!-- Slider Form -->
+
+<form action="/admin/save_deposit_scheme_slide" method="post" enctype="multipart/form-data">
+<div class="container-fluid bg-white p-4">
+    <div class="row">
+        <div class="mb-3 col-md-12 text-center">
+            <h3>Add Deposit Schemes Slider</h3>
+        </div>
+
+        <div class="mb-3 col-12">
+            Enter Title
+            <input type="text" name="slide_title" class="form-control">
+        </div>
+
+        <div class="mb-3 col-12">
+            Enter Details
+            <textarea name="slide_details" class="form-control"></textarea>
+        </div>
+
+        <div class="mb-3 col-12">
+            Slider Image
+            <input type="file" name="slide_image" class="form-control" accept="image/*">
+        </div>
+
+        <div class="mb-3 col-12 text-center">
+            <button class="btn btn-primary">Save Slide</button>
+        </div>
+    </div>
+</div>
+</form>
+
+<!-- Slider Table -->
+
+<br><br>
+<div class="container-fluid bg-white p-4">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h3>Deposit Scheme Slides</h3>
+            <br>
+        </div>
+        <div class="col-md-12">
+            <table class="table table-sm table-bordered">
+                <tr>
+                    <th>Action</th>
+                    <th>SN</th>
+                    <th>Title</th>
+                    <th>Details</th>
+                    <th>Image</th>
+                </tr>
+                <% for(i=0;i<deposit_slides.length;i++) { %>
+
+                    <tr>
+                        <td style="white-space: nowrap;">
+                            <a href="/admin/delete_slide/<%- deposit_slides[i].slide_id %>">
+                                <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                            </a>  
+                        </td>
+                        <td><%-i+1%></td>
+                        <td><%-deposit_slides[i].slide_title%></td>
+                        <td><%-deposit_slides[i].slide_details%></td>
+                        <td><img src="/uploads/<%-deposit_slides[i].slide_image%>" width="100px"></td>
+
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<!-- Card Form -->
+<br><br>
+<form action="/admin/save_deposit_scheme_card" method="post" enctype="multipart/form-data">
+    <div class="container-fluid bg-white p-4">
+        <div class="row">
+            <div class="mb-3 col-md-12">
+                <h3>Add Deposit Schemes Card</h3>
+            </div>
+    
+            <div class="mb-3 col-12">
+                Enter Title
+                <input type="text" name="card_title" class="form-control">
+            </div>
+    
+            <div class="mb-3 col-12">
+                Enter Details
+                <textarea name="card_details" class="form-control"></textarea>
+            </div>
+    
+            <div class="mb-3 col-12">
+                Card Image
+                <input type="file" name="card_image" class="form-control" accept="image/*">
+            </div>
+    
+            <div class="mb-3 col-12 text-center">
+                <button class="btn btn-primary">Save Card</button>
+            </div>
+        </div>
+    </div>
+    </form>
+
+
+<!-- Card Table -->
+    <br><br>
+    <div class="container-fluid bg-white p-4">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Deposit Scheme Cards</h3>
+                <br>
+            </div>
+            <div class="col-md-12">
+                <table class="table table-sm table-bordered">
+                    <tr>
+                        <th>Action</th>
+                        <th>SN</th>
+                        <th>Title</th>
+                        <th>Details</th>
+                        <th>Image</th>
+                    </tr>
+                    <% for(i=0;i<deposit_card.length;i++) { %>
+    
+                        <tr>
+                            <td style="white-space: nowrap;">
+                                <a href="/admin/delete_card/<%- deposit_card[i].card_id %>">
+                                    <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                                </a>  
+                            </td>
+                            <td><%-i+1%></td>
+                            <td><%-deposit_card[i].card_title%></td>
+                            <td><%-deposit_card[i].card_details%></td>
+                            <td><img src="/uploads/<%-deposit_card[i].card_image%>" width="100px"></td>
+    
+                        </tr>
+                    <% } %>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+<!-- Depost inormation card form-->
+
+    <br><br>
+    <form action="/admin/save_deposit_info_card" method="post" enctype="multipart/form-data">
+        <div class="container-fluid bg-white p-4">
+            <div class="row">
+                <div class="mb-3 col-md-12">
+                    <h3>Add Deposit Information Card</h3>
+                </div>
+        
+                <div class="mb-3 col-12">
+                    Enter Title
+                    <input type="text" name="info_card_title" class="form-control">
+                </div>
+        
+                <div class="mb-3 col-12">
+                    Enter Details
+                    <textarea name="info_card_details" class="form-control"></textarea>
+                </div>
+        
+                <div class="mb-3 col-12 text-center">
+                    <button class="btn btn-primary">Save Information Card</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+
+<!-- Depost inormation card table-->
+
+
+    <br><br>
+    <div class="container-fluid bg-white p-4">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Deposit Information Cards</h3>
+                <br>
+            </div>
+            <div class="col-md-12">
+                <table class="table table-sm table-bordered">
+                    <tr>
+                        <th>Action</th>
+                        <th>SN</th>
+                        <th>Title</th>
+                        <th>Details</th>
+                    </tr>
+                    <% for(i=0;i<deposit_info_card.length;i++) { %>
+    
+                        <tr>
+                            <td style="white-space: nowrap;">
+                                <a href="/admin/delete_info_card/<%- deposit_info_card[i].info_card_id %>">
+                                    <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                                </a>  
+                            </td>
+                            <td><%-i+1%></td>
+                            <td><%-deposit_info_card[i].info_card_title%></td>
+                            <td><%-deposit_info_card[i].info_card_details%></td>    
+                        </tr>
+                    <% } %>
+                </table>
+            </div>
+        </div>
+    </div>
+
+<!-- Depost inormation card documents from-->
+
+    <br><br>
+    <form action="/admin/save_deposit_info_card_docs" method="post" enctype="multipart/form-data">
+        <div class="container-fluid bg-white p-4">
+            <div class="row">
+                <div class="mb-3 col-md-12">
+                    <h3>Add Deposit Information Card Documents</h3>
+                </div>
+
+                <div class="mb-3 col-md-12">
+                    Select Loan Type*
+                    <select name="info_card_id" class="form-control" style="height: auto;">
+                <% for(var i=0;i<deposit_info_card.length;i++) { %>
+                    <option value="<%=deposit_info_card[i].info_card_id%>"><%=deposit_info_card[i].info_card_title%></option>
+                <% } %>
+                    </select>
+                </div>
+        
+                <div class="mb-3 col-12">
+                    Enter Documents Required
+                    <input type="text" name="info_card_docs" class="form-control">
+                </div>
+        
+                <div class="mb-3 col-12 text-center">
+                    <button class="btn btn-primary">Save Information Card Documents</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+<!-- Depost inormation card documents table-->
+
+
+    <br><br>
+    <div class="container-fluid bg-white p-4">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Deposit Information Card Documents</h3>
+                <br>
+            </div>
+            <div class="col-md-12">
+                <table class="table table-sm table-bordered">
+                    <tr>
+                        <th>Action</th>
+                        <th>SN</th>
+                        <th>card_id</th>
+                        <th>Deposit Scheme</th>
+                        <th>Documents</th>
+                    </tr>
+                    <% for(i=0;i<deposit_info_card_docs.length;i++) { %>
+    
+                        <tr>
+                            <td style="white-space: nowrap;">
+                                <a href="/admin/delete_info_card_docs/<%- deposit_info_card_docs[i].info_card_docs_id %>">
+                                    <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                                </a>  
+                            </td>
+                            <td><%-i+1%></td>
+                            <td><%- deposit_info_card_docs[i].info_card_id %></td>
+                            <td><%-deposit_info_card_docs[i].info_card_title%></td>
+                            <td><%-deposit_info_card_docs[i].info_card_docs%></td>    
+                        </tr>
+                    <% } %>
+                </table>
+            </div>
+        </div>
+    </div>
+
+<%- include("footer.ejs") %>

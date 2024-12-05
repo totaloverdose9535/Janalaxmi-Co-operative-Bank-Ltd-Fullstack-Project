@@ -1,0 +1,188 @@
+<%- include('navbar.ejs') %>
+
+    <div class="container-fluid  ">
+        <div class="row ">
+            <div class="col-12 p-0">
+                <div class="bus_sec_cur_depo" data-aos="fade-down" data-aos-duration="1000">
+
+
+                    <section class="blog_bread">
+                        <div class="container py-5 topbar">
+                            <div class="row py-5 ">
+                                <h1 class="text-white text-center">Current Account Information</h1>
+                                <nav class="breadnav " aria-label="breadcrumb">
+                                    <ol class="breadcrumb bg-transparent  justify-content-center">
+                                        <li class="breadcrumb-item fs-5">
+                                            <a class="text-decoration-none text-white" href="">Home</a>
+                                        </li>
+                                        <li class="breadcrumb-item fs-5">
+                                            <a class="text-decoration-none text-white" href="/deposit_scheme_page">deposit schemes</a>
+                                        </li>
+                                        <li class="breadcrumb-item fs-5 active text-warning" aria-current="page">
+                                            Curent Deposite
+                                        </li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </section>
+                    <!--contact breadcrumb end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Card  Start -->
+
+
+    <h2 style="text-align: center; margin-top: 50px;"> Current account scheme is available for businessmen.</h2>
+    <section class="articles mt-5">
+        <% for(var i=0;i<current_deposit_card.length;i++) { %>
+            <article data-aos="fade-up" data-aos-duration="1000">
+                <div class="article-wrapper ">
+                    <figure>
+                        <img style="height:150px ; width: 150px; margin-top: 50px; margin-left: 100px;" src="uploads/<%= current_deposit_card[i].current_card_image %>" alt="" />
+
+                    </figure>
+                    <div class="article-body">
+                        <!-- <h2>This is some title</h2> -->
+                        <p>
+                            <%= current_deposit_card[i].current_card_details %>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <% } %>
+
+    </section>
+
+
+    <!-- Card End  -->
+    <div class="container-fluid mb-5">
+        <div class="row">
+            <!-- <div class="col-12 col-md-5 Enquire_form  mt-3 "> -->
+            <!-- <div class="bg-white mt-5 text-dark text-center p-4 rounded box_shodow form-floating">
+                <form action="#" method="#">
+                    <h2>Enquire Now</h2>
+                    <div class="form-floating ">
+                        <input type="text" class="form-control w-75 mx-auto mt-3  p-2" id="floatingInput" placeholder="Name">
+                    </div>
+                    <div class="form-floating ">
+                        <input type="email" class="form-control w-75 mx-auto   mt-3 p-2" id="floatingInput" placeholder="name@example.com">
+                    </div>
+                    <div class="form-floating ">
+                        <input type="number" class="form-control w-75 mx-auto  mt-3  p-2" id="floatingInput" placeholder="Phone">
+                    </div>
+                    <div class="form-floating ">
+                        <input type="text" class="form-control w-75 mx-auto mt-3  p-2" id="floatingInput" placeholder="City/village">
+                    </div>
+                    <div class="form-floating w-75 mx-auto mt-3">
+                        <textarea class="form-control p-4" id="floatingInput" placeholder="Message" style="height: 120px;"></textarea>
+                    </div>
+
+                    <button class="btn btn-warning form-control w-75 mx-auto   mt-3   p-0">Send Now</button>
+                </form>
+            </div> -->
+
+            <div class="col-md-4  mt-5" style=" border-radius: 20px;" data-aos="fade-right" data-aos-duration="1500">
+                <form action="/save_current_deposit_enquiry" method="post">
+                    <div class="card card-body ">
+                        <h2 class="text-center mb-3 fw-bold">Enquire Now</h2>
+
+
+                        <div class="form-floating mt-3 ">
+                            <input type="text" class="form-control" name="current_enquiry_name" id="floatingInput" placeholder=" Enter name " required>
+                            <label for="floatingInput">Name</label>
+                        </div>
+                        <div class="form-floating mt-3 mb-2">
+                            <input type="email" class="form-control" id="floatingInput" name="current_enquiry_email" placeholder="name@example.com" required>
+                            <label for="floatingInput">Email address</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="mobile" class="form-control" id="floatingInput" maxlength="10" pattern="\d{10}" oninput="this.value = this.value.replace(/\D/g,'')" inputmode="numeric" name="current_enquiry_mobile" placeholder="Mobile" required>
+                            <label for="floatingInput">Mobile</label>
+                        </div>
+                        <div class="form-floating mt-3 ">
+                            <input type="text" class="form-control" id="floatingInput" name="current_enquiry_city" placeholder="User name " required>
+                            <label for="floatingInput">City</label>
+                        </div>
+                        <div class="form-floating w-100 mx-auto mt-3">
+                            <textarea class="form-control p-4" id="floatingInput" placeholder="Message" name="current_enquiry_message" style="height: 120px;"></textarea>
+                            <label for="floatingInput" class="ms-3" aria-required="true">Message</label>
+                        </div>
+
+                        <button class="btn btn-primary mt-3 w-75 ml-5 fw-bold mb-1" style="height: 50px;">Apply Now</button>
+
+                    </div>
+                </form>
+
+                <!-- </div> -->
+            </div>
+            <div class="col-12 col-md-8 mx-auto mt-5 Enquire_form" data-aos="fade-up" data-aos-duration="1000">
+                <h2 class="mt-3 ms-3" style="color: blue;" id="text_box_family">Current Deposite </h2>
+                <p class="ms-2">Current Accounts (C/As) can be opened by partnership firms, private and public limited companies, HUFs/ specified associations, societies, trusts etc.</p>
+
+
+
+
+                <div class="container container1234 py-5 " style="padding-top: 0px;margin-top: -40px;">
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <!-- <div class="card card-body rounded-3 border-0 shadow-lg"> -->
+                            <!-- Custom Tab Navigation -->
+                            <!-- <div class="d-flex justify-content-center mb-4"> -->
+
+                            <button class="tablinks active" id="defaultOpen" onclick="openCity(event, 'documents')" style="visibility: hidden;">
+                    
+                </button>
+
+                        </div>
+
+                        <!-- Tab Content -->
+                        <div id="documents" class="tabcontent">
+                            <ul class="ms-2" style="list-style:none;">
+                                <h3 class="mt-4 ms-3 w-25 text-center mb-3" style=" color: orange; 
+                                         border-bottom: 2px solid orange; ">Documents</h3>
+                                <% for(var i=0;i<current_deposit_docs.length;i++) { %>
+                                    <li><i class="fa-sharp fa-solid fa-check"><p style="margin-left: 30px; 
+                                            margin-top: -16px; font-weight: normal;color: black;">
+                                            <%- current_deposit_docs[i].current_deposit_docs %></p></i></li>
+                                    <% } %>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Custom JavaScript to manage the tabs -->
+        <script>
+            function openCity(evt, cityName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+
+            // Open the default tab (Features)
+            document.getElementById("defaultOpen").click();
+        </script>
+    </div>
+    </div>
+
+    <%- include('footer.ejs') %>

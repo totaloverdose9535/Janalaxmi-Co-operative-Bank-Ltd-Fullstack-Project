@@ -1,0 +1,155 @@
+/* about page query */
+
+@media(min-width:768px) and (max-width:1024px) {
+    .item-home mark {
+        font-size: 30px;
+    }
+    .item-home .card-text {
+        font-size: 30px;
+    }
+    .item-home span {
+        font-size: 30px;
+    }
+    .card_wid {
+        width: 25rem;
+        margin-top: 20px;
+    }
+    .chairman_sec h2 {
+        font-size: 40px;
+    }
+    .chairman_sec3 h1,
+    li {
+        font-size: 35px;
+    }
+    .chairman_sec2 h3 {
+        font-size: 40px;
+    }
+    .chairman_para1 {
+        margin-top: 50px;
+    }
+    .aboutinfo {
+        margin-top: 50px;
+    }
+    .aboutinfo {
+        font-size: 30px;
+    }
+    .aboutcard {
+        font-size: 25px;
+    }
+    .vision_text {
+        font-size: 30px;
+    }
+    .missionimg {
+        margin-top: 20px;
+        margin-left: 180px;
+        height: 250px;
+        width: 350px;
+    }
+    .item-home p,
+    span,
+    mark,
+    ol {
+        font-size: 22px;
+    }
+    .history_para {
+        font-size: 30px;
+    }
+    .mis {
+        font-size: 27px;
+    }
+    .touch h1,
+    h4,
+    p,
+    i {
+        font-size: 30px;
+    }
+    .happy_customer,
+    .customer h6 {
+        font-size: 30px;
+    }
+    .team_mem img {
+        object-fit: cover;
+        margin-left: 100px;
+    }
+}
+
+@media(max-width:576px) {
+    .team_social {
+        font-size: 25px;
+    }
+    .our_team h3 {
+        font-size: 30px;
+    }
+    .item-home mark {
+        font-size: 20px;
+    }
+    .item-home .card-text {
+        font-size: 20px;
+    }
+    .item-home span {
+        font-size: 20px;
+    }
+    .card_wid {
+        margin-top: 25px;
+    }
+    .happycustomer {
+        height: 100px;
+    }
+    .missionimg {
+        margin-left: 7px;
+        width: 300px;
+    }
+    .history_para {
+        font-size: 22px;
+    }
+    .aboutimg {
+        margin-top: -30px;
+    }
+    .ab_or {
+        margin-top: 20px;
+    }
+    .mis {
+        font-size: 20px;
+    }
+    .aboutinfo {
+        margin-top: 50px;
+    }
+    .chairman_para {
+        margin-top: 10px;
+        font-size: 20px;
+        margin-left: none;
+    }
+    .carousel-inner {
+        height: 220px;
+    }
+    .gallery_modal {
+        width: 600px;
+        margin-top: 100px;
+    }
+    .btn-close {
+        margin-left: 290px;
+    }
+    .gallerymodal-content {
+        align-items: center;
+        height: 250px;
+        width: 350px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .owl-carousel {
+        margin-top: 10px;
+    }
+    .owl-carousel .item-home {
+        margin: 0;
+        width: calc(300% / 3);
+        /* Displays 2 items per row */
+    }
+}
+
+@media (max-width:576px) {
+    .chairman_para {
+        font-size: 20px;
+        margin-left: none;
+    }
+}

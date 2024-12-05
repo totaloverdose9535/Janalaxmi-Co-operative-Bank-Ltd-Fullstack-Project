@@ -1,0 +1,477 @@
+/* navbar end  */
+
+.Bus_sec_FD {
+    height: 350px;
+    background-image: url('https://tccbank.in/assets/images/breadcrumbs/fixed-deposit.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    width: 100;
+    z-index: 1;
+}
+
+.Bus_sec_FD::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.7);
+    height: 350px;
+}
+
+@media (max-width:768px) {
+    .Bus_sec_FD::before {
+        height: 100%;
+        background-size: cover;
+    }
+}
+
+
+/* bread crunmb */
+
+.breadnav {
+    --bs-breadcrumb-divider: ">";
+}
+
+.breadnav .breadcrumb-item+.breadcrumb-item::before {
+    color: white;
+}
+
+
+/* breadcrumb-item end  */
+
+header {
+    margin-top: 3%;
+    color: orange;
+    text-align: center;
+    padding: 30px 0;
+    font-weight: bold;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+
+/* Benefits Section */
+
+.benefits {
+    /* background-color: #eaf5e5; */
+    padding: 40px 20px;
+    border-radius: 8px;
+}
+
+.benefits ul {
+    list-style-type: none;
+}
+
+.benefits li {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.benefits li strong {
+    color: blue;
+    margin-left: 50px;
+}
+
+
+/* section two Start  */
+
+
+/* Styling the table container */
+
+.table-container {
+    overflow-x: auto;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+
+/* Table styling */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+
+/* Header cell styling */
+
+th {
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 2px solid #ddd;
+}
+
+
+/* Data cell styling */
+
+td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    font-size: 17px;
+    color: #555;
+}
+
+
+/* Zebra striping for rows */
+
+tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+
+/* Hover effect for rows */
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+
+/* Make table responsive */
+
+@media (max-width: 768px) {
+    table {
+        font-size: 12px;
+    }
+    th,
+    td {
+        padding: 8px;
+    }
+}
+
+
+/* section two end */
+
+
+/* Section Three STart  */
+
+
+/*Card Sart*/
+
+article {
+    --img-scale: 1.001;
+    --title-color: black;
+    --link-icon-translate: -20px;
+    --link-icon-opacity: 0;
+    position: relative;
+    border-radius: 16px;
+    box-shadow: none;
+    background: #fff;
+    transform-origin: center;
+    transition: all 0.4s ease-in-out;
+    overflow: hidden;
+}
+
+article a::after {
+    position: absolute;
+    inset-block: 0;
+    inset-inline: 0;
+    cursor: pointer;
+    content: "";
+}
+
+
+/* basic article elements styling */
+
+article h2 {
+    margin: 0 0 18px 0;
+    font-weight: bold;
+    /* font-family: "Bebas Neue", cursive; */
+    font-size: 1.5rem;
+    letter-spacing: 0.06em;
+    color: orangered;
+    transition: color 0.3s ease-out;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+article img {
+    max-width: 100%;
+    transform-origin: center;
+    transform: scale(var(--img-scale));
+    transition: transform 0.4s ease-in-out;
+}
+
+.article-body {
+    padding: 24px;
+}
+
+article a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #28666e;
+}
+
+article a:focus {
+    outline: 1px dotted #28666e;
+}
+
+article a .icon {
+    min-width: 24px;
+    width: 24px;
+    height: 24px;
+    margin-left: 5px;
+    transform: translateX(var(--link-icon-translate));
+    opacity: var(--link-icon-opacity);
+    transition: all 0.3s;
+}
+
+
+/* using the has() relational pseudo selector to update our custom properties */
+
+article:has(:hover,
+ :focus) {
+    --img-scale: 1.1;
+    --title-color: #28666e;
+    --link-icon-translate: 0;
+    --link-icon-opacity: 1;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+
+/************************ 
+  Generic layout (demo looks)
+  **************************/
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    /* padding: 48px 0; */
+    font-family: "Figtree", sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    /* background-image: linear-gradient(45deg, #7c9885, #b5b682); */
+    min-height: 100vh;
+}
+
+.articles {
+    display: grid;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+@media screen and (max-width: 960px) {
+    article {
+        container: card/inline-size;
+    }
+    .article-body p {
+        display: none;
+    }
+}
+
+@container card (min-width: 380px) {
+    .article-wrapper {
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        gap: 16px;
+    }
+    .article-body {
+        padding-left: 0;
+    }
+    figure {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    figure img {
+        height: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+    }
+}
+
+.sr-only:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.calculator {
+    margin-top: 40px;
+    margin-left: -10px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.calcu_button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.calcu_button:hover {
+    background-color: green;
+}
+
+.result {
+    margin-top: 20px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+/* Section 4 End  */
+
+
+/* Section 5 Start *
+
+/* Unordered List Styling */
+
+.fd-benefits-list {
+    list-style-type: disc;
+    margin-left: -10px;
+    margin-top: 60px;
+    line-height: 1.8;
+}
+
+
+/* List Item Styling */
+
+.fd-benefits-list {
+    font-size: 1.1em;
+    color: #333;
+    padding-left: 10px;
+    position: relative;
+}
+
+
+/* Custom Bullet Style */
+
+.fd-benefits-list li::before {
+    margin-top: -10px;
+    margin-left: -20px;
+    content: '✔';
+    color: #4caf50;
+    font-size: 1.5em;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateY(5px);
+}
+
+
+/* Hover Effect for List Items */
+
+.fd-benefits-list li:hover {
+    background-color: #f1f1f1;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+
+/* bread crunmb */
+
+.breadnav {
+    --bs-breadcrumb-divider: ">";
+}
+
+.breadnav .breadcrumb-item+.breadcrumb-item::before {
+    color: white;
+}
+
+
+/* center area  */
+
+.section-heading-border {
+    position: relative;
+    height: 6px;
+    width: 55px;
+    margin: auto;
+    background: orange;
+    border-radius: 10px;
+    display: block;
+}
+
+.section-heading-border::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 50%;
+    background: orange;
+    border-radius: 10px;
+    right: -60%;
+    top: 0;
+}
+
+.section-heading-border::after {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 25%;
+    background: orange;
+    border-radius: 10px;
+    right: -100%;
+    top: 0;
+}

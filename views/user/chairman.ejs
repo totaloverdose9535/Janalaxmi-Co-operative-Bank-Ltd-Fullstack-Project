@@ -1,0 +1,139 @@
+<%- include("navbar.ejs") %>
+
+
+    <div class="m-0 p-0 formoving">
+
+        <div class="container-fluid  p-0">
+            <div class="row ">
+                <div class="col-12 ">
+                    <div class="bus_sec_chairman" data-aos="fade-down" data-aos-duration="1000">
+
+
+                        <section class="blog_bread">
+                            <div class="container py-5 topbar">
+                                <div class="row py-5 ">
+                                    <h1 class="text-white text-center">Chairman’s message </h1>
+                                    <nav class="breadnav " aria-label="breadcrumb">
+                                        <ol class="breadcrumb bg-transparent  justify-content-center">
+                                            <li class="breadcrumb-item fs-5">
+                                                <a class="text-decoration-none text-white" href="/">Home</a>
+                                            </li>
+                                            <li class="breadcrumb-item fs-5">
+                                                <a class="text-decoration-none text-white" href="#">About us </a>
+                                            </li>
+                                            <li class="breadcrumb-item fs-5 active text-warning" aria-current="page">
+                                                <a href="/about_chairman"> Our Chairman</a>
+                                            </li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <section class="chairman_sec">
+            <h2 class="text-center mt-5" data-aos="fade-up" data-aos-duration="1000">About Chairman</h2>
+            <span class="section-heading-border border-center mb-2 mt-4"></span>
+            <div class="row mt-2 text-center">
+                <div class="container-fluid p-5">
+                    <div class="row">
+                        <div class="col-lg-5 col-12 text-center mt-5">
+                            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                </div>
+                                <div class="carousel-inner shadow">
+                                    <div class="carousel-item active">
+                                        <img src="/uploads/<%-slider[0].chairman_slider_image%>" class="d-block w-100" alt="..." style="height:300px;">
+                                    </div>
+                                    <% for(var i=0; i<slider.length; i++ ) { %>
+                                        <div class="carousel-item">
+                                            <img src="/uploads/<%-slider[i].chairman_slider_image%>" class="d-block w-100" alt="..." style="height:300px;">
+                                        </div>
+                                        <% } %>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+									<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+									<span class="visually-hidden">Previous</span>
+								</button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+									<span class="carousel-control-next-icon" aria-hidden="true"></span>
+									<span class="visually-hidden">Next</span>
+								</button>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-7 col-12 " style="margin-top: 10px;">
+                            <p class="chairman_para1 fs-4 fw-semibold" data-aos="fade-up" data-aos-duration="1000">
+                                <%-chairman_info.chairman_info%>
+                            </p>
+                            <h1 class="fw-bold" data-aos="fade-up" data-aos-duration="1000">
+                                <%-chairman_info.chairman_name%>
+                            </h1>
+                            <p class="chairman_para ml-5 fw-semibold fs-5">
+                                <%-chairman_info.chairman_description%>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <section class="py-5 chairman_sec2">
+            <h3 class="text-center mt-2" data-aos="fade-up" data-aos-duration="1000">Thought Gallery</h3>
+            <span class="section-heading-border border-center mb-2"></span>
+            <div class="container py-5">
+                <div class="row">
+                    <% for (var i=0;i<gallery.length;i++) { %>
+
+                        <div class="col-lg-3 col-md-6 col-12 chairman" data-aos="fade-up" data-aos-duration="1000">
+                            <div class="card shadow">
+                                <img src="/uploads/<%-gallery[i].chairman_gallery_image%>" class="card-img-top" alt="Card Image 1" onclick="openModal('/uploads/<%-gallery[i].chairman_gallery_image%>')" />
+
+                            </div>
+                        </div>
+                        <% } %>
+
+                </div>
+            </div>
+
+
+
+            <!-- Modal Structure -->
+            <div class="modal fade gallery_modal" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="gallerymodal-content">
+                        <div class="modal-body">
+                            <button type="button" class="btn-close close2" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <img id="modalImage" src="" alt="Full-size Image" class="img-fluid" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+    </div>
+
+    <!-- JavaScript to open the modal and set the image source -->
+    <script>
+        function openModal(imageSrc) {
+            document.getElementById("modalImage").src = imageSrc;
+            var modal = new bootstrap.Modal(document.getElementById("imageModal"));
+            modal.show();
+        }
+    </script>
+
+
+
+    <%- include("footer.ejs") %>

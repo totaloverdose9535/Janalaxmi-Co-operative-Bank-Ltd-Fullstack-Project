@@ -1,0 +1,96 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    /* overflow-x: hidden; */
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(226, 241, 255);
+    font-family: 'Roboto';
+}
+
+.Termcondi {
+    background-image: url('https://t4.ftcdn.net/jpg/08/44/56/85/240_F_844568525_EryGwe3JvjwB29KbP3cib4gmKDAYIf7D.jpg');
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+
+.Termcondi::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.5);
+    height: 350px;
+}
+
+.privacyploicy {
+    background-image: url('https://t4.ftcdn.net/jpg/08/44/56/85/240_F_844568525_EryGwe3JvjwB29KbP3cib4gmKDAYIf7D.jpg');
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+
+.privacyploicy::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.5);
+    height: 350px;
+}
+
+.breadnav {
+    --bs-breadcrumb-divider: ">";
+}
+
+.breadnav .breadcrumb-item+.breadcrumb-item::before {
+    color: white;
+}
+
+.Terms_Conditions h1 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    margin-bottom: 10px;
+}
+
+.Terms_Conditions a {
+    text-decoration: none;
+}
+
+.Terms_Conditions a h3 {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: black;
+}
+
+.Terms_Conditions_text {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    z-index: 1;
+    color: red;
+}
+
+#icons {
+    font-size: 10px;
+    justify-content: center;
+    align-items: center;
+    color: rgb(77, 73, 201);
+}

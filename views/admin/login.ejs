@@ -1,0 +1,65 @@
+<%- include("navbar.ejs") %>
+
+
+    
+            <div class="container">
+              <div class="row" style="margin-left: 200px;">
+                <div class="col-lg-6 col-md-6 d-flex flex-column align-items-center justify-content-center">
+    
+                  <div class="d-flex justify-content-center py-4">
+                    <a href="/admin" class="logo d-flex align-items-center w-auto">
+                      <span class="d-none d-lg-block text-black">Janalaxmi Co-operative Bank Ltd.</span>
+                    </a>
+                  </div><!-- End Logo -->
+    
+                  <div class="card mb-3 card-body shadow pt-2 pb-2 rounded-0" >
+                    <div class="card-body">
+                      <div class="pt-4 pb-2">
+                        <h5 class="card-title text-center pb-0 fs-4 text-black">Login to Your Admin Account</h5>
+                      </div>
+                      <form action="/admin/do_login" method="post">
+                        <div class="col-12">
+                          <label for="yourUsername" class="form-label">Username</label>
+                          <div class="input-group has-validation">
+                            <input type="text" name="admin_user_id" class="form-control rounded-0 card-body  pt-2 pb-2"  required placeholder="enter your username">
+                            <div class="invalid-feedback">Please enter your username.</div>
+                          </div>
+                        </div>
+                        <br>
+                        <div class="col-12 mt-2">
+                          <label for="yourPassword" class="form-label">Password</label>
+                          <input type="password" name="admin_password" class="form-control rounded-0 card-body  pt-2 pb-2"  required placeholder="enter your password">
+                          <div class="invalid-feedback">Please enter your password!</div>
+                        </div>
+                        <br>
+                        
+                        <div class="col-12 mt-2">
+                          <button class="btn btn-warning w-100 rounded-0 text-white card-body  pt-2 pb-2" type="submit">Login</button>
+                        </div>
+                        <br>
+                        <p style="text-align: left;">Change Password : <a href="/admin/update_password">Click Here</a></p>
+
+                      </form>
+    
+                    </div>
+                  </div>
+    
+                  <div class="credits text-center">
+                    <p>	&#169; <span id="year"></span> Janalaxmi Co-operative Bank Ltd. All Rights Reserved <br> Design by <a href="https://www.a2zithub.org/" target="_blank">A2Z IT HUB PVT LTD</a></p>
+                  </div>
+    
+                </div>
+              </div>
+            </div>
+    
+    
+        
+
+
+
+
+    <%- include('footer.ejs') %>
+        <!-- CREATE TABLE admin_login(admin_login_id INT PRIMARY KEY AUTO_INCREMENT, admin_user_id VARCHAR(100),admin_mobile VARCHAR(100),admin_email VARCHAR(100), admin_password VARCHAR(100)) -->
+
+
+

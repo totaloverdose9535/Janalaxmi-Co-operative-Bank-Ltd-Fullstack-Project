@@ -1,0 +1,228 @@
+<%- include('navbar.ejs') %>
+<form action="/admin/save_fixed_deposit_scheme_details" method="post" enctype="multipart/form-data">
+    <div class="container-fluid bg-white p-4">
+        <div class="row">
+            <div class="mb-3 col-md-12 text-center">
+                <h3>Add Fixed Deposit Schemes Details</h3>
+            </div>
+            
+            <div class="mb-3 col-12">
+                Principle Amount
+                <input type="text" name="principle_amount" class="form-control">
+            </div>
+    
+            <div class="mb-3 col-12">
+                Interest Rate
+                <input type="text" name="interest_rate" class="form-control">
+            </div>
+
+            <div class="mb-3 col-12">
+                Tenure
+                <input type="text" name="tenure" class="form-control">
+            </div>
+
+            <div class="mb-3 col-12">
+                Interest Frequency
+                <input type="text" name="interest_frequency" class="form-control">
+            </div>
+
+            <div class="mb-3 col-12">
+                Interest Earned
+                <input type="text" name="interest_earned" class="form-control">
+            </div>
+
+            <div class="mb-3 col-12">
+                Maturity Amount
+                <input type="text" name="maturity_amount" class="form-control">
+            </div>
+            <div class="mb-3 col-12 text-center">
+                <button class="btn btn-primary">Save Details</button>
+            </div>
+        </div>
+    </div>
+    </form>
+
+
+<!-- fixed deposit table  -->
+
+
+<br><br>
+<div class="container-fluid bg-white p-4">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h3>Fixed Deposit Scheme Details</h3>
+            <br>
+        </div>
+        <div class="col-md-12">
+            <table class="table table-sm table-bordered">
+                <tr>
+                    <th>Action</th>
+                    <th>SN</th>
+                    <th>Principle Amount</th>
+                    <th>Interest Rate</th>
+                    <th>Tenure</th>
+                    <th>Interest Frequency</th>
+                    <th>Interest Earned</th>
+                    <th>Maturity Amount</th>
+
+                </tr>
+                <% for(i=0;i<fixed_deposit_details.length;i++) { %>
+
+                    <tr>
+                        <td style="white-space: nowrap;">
+                            <a href="/admin/delete_fixed_deposit_details/<%- fixed_deposit_details[i].fixed_deposit_scheme_details_id %>">
+                                <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                            </a>  
+                        </td>
+                        <td><%-i+1%></td>
+                        <td><%-fixed_deposit_details[i].principle_amount%></td>    
+                        <td><%-fixed_deposit_details[i].interest_rate%></td>    
+                        <td><%-fixed_deposit_details[i].tenure%></td>    
+                        <td><%-fixed_deposit_details[i].interest_frequency%></td>    
+                        <td><%-fixed_deposit_details[i].interest_earned%></td>    
+                        <td><%-fixed_deposit_details[i].maturity_amount%></td>    
+
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+</div> 
+
+
+<br><br>
+<form action="/admin/save_fixed_deposit_scheme_card" method="post" enctype="multipart/form-data">
+    <div class="container-fluid bg-white p-4">
+        <div class="row">
+            <div class="mb-3 col-md-12">
+                <h3>Add Fixed Deposit Schemes Card</h3>
+            </div>
+            
+            <div class="mb-3 col-12">
+                Features And Benifits Image 
+                <input type="file" name="fixed_deposit_card_image" class="form-control" accept="image/*">
+            </div>
+
+            <div class="mb-3 col-12">
+                Features And Benifits Title 
+                <input type="text" name="fixed_deposit_card_title" class="form-control">
+            </div>
+    
+            <div class="mb-3 col-12">
+                Features And Benifits Details 
+                <input type="text" name="fixed_deposit_card_details" class="form-control">
+            </div>
+
+            
+            <div class="mb-3 col-12 text-center">
+                <button class="btn btn-primary">Save Details</button>
+            </div>
+        </div>
+    </div>
+    </form>
+
+
+
+    <br><br>
+<div class="container-fluid bg-white p-4">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Fixed Deposit Scheme Card</h3>
+            <br>
+        </div>
+        <div class="col-md-12">
+            <table class="table table-sm table-bordered">
+                <tr>
+                    <th>Action</th>
+                    <th>SN</th>
+                    <th>Fixed Card Image</th>
+                    <th>Fixed Card Title</th>
+                    <th>Fixed Card Details</th>
+                    
+
+                </tr>
+                <% for(i=0;i<fixed_deposit_card.length;i++) { %>
+
+                    <tr>
+                        <td style="white-space: nowrap;">
+                            <a href="/admin/delete_fixed_deposit_card/<%- fixed_deposit_card[i].fixed_deposit_scheme_card_id %>">
+                                <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                            </a>  
+                        </td>
+                        <td><%-i+1%></td>
+                        <td>
+                            <img src="/uploads/<%-fixed_deposit_card[i].fixed_deposit_card_image%>" alt="">
+                        </td>    
+                        <td><%-fixed_deposit_card[i].fixed_deposit_card_title%></td>    
+                        <td><%-fixed_deposit_card[i].fixed_deposit_card_details%></td>    
+             
+
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+</div> 
+
+
+
+<br><br>
+<form action="/admin/save_fixed_deposit_scheme_benefits" method="post" enctype="multipart/form-data">
+    <div class="container-fluid bg-white p-4">
+        <div class="row">
+            <div class="mb-3 col-md-12">
+                <h3>Add Fixed Deposit Schemes Benefits</h3>
+            </div>
+
+            <div class="mb-3 col-12">
+                Features And Benefits Title 
+                <input type="text" name="benifits" class="form-control">
+            </div>
+    
+            
+            <div class="mb-3 col-12 text-center">
+                <button class="btn btn-primary">Save Benefits</button>
+            </div>
+        </div>
+    </div>
+    </form>
+
+
+
+    
+    <br><br>
+<div class="container-fluid bg-white p-4">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Fixed Deposit Scheme Benefits</h3>
+            <br>
+        </div>
+        <div class="col-md-12">
+            <table class="table table-sm table-bordered">
+                <tr>
+                    <th>Action</th>
+                    <th>SN</th>
+                    <th>Fixed Deposit Beneits</th>
+                    
+
+                </tr>
+                <% for(i=0;i<fixed_deposit_benifits.length;i++) { %>
+
+                    <tr>
+                        <td style="white-space: nowrap;">
+                            <a href="/admin/delete_fixed_deposit_benifits/<%- fixed_deposit_benifits[i].fixed_deposit_scheme_benifits_id %>">
+                                <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                            </a>  
+                        </td>
+                        <td><%-i+1%></td>
+                        <td><%-fixed_deposit_benifits[i].benifits%></td>    
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+</div> 
+
+
+
+<%- include('footer.ejs') %>

@@ -1,0 +1,63 @@
+<%- include('navbar.ejs') %>
+    <div class="container-fluid bg-white p-4">
+        <div class="row">
+            <div class="mb-3 col-md-12">
+                <h3><a href="/admin/loan_list"><i class="fa fa-angle-left"></i></a> Loan Information</h3>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <b>Loan Type</b>
+                <p><%= loan_info.loan_name %></p>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <b>Loan Tenure</b>
+                <p><%= loan_info.loan_tenure %></p>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <b>Loan Intrest Rate</b>
+                <p><%= loan_info.loan_intrest_rate %></p>
+            </div>
+
+            <div class="col-md-12 mb-4">
+                <b>Loan Short Note</b>
+                <p><%= loan_info.loan_shortnote %></p>
+            </div>
+
+            <div class="col-md-12 mb-4">
+                <b>Loan Description</b>
+                <p><%= loan_info.loan_description %></p>
+            </div>
+
+            <div class="col-md-12 mb-4">
+                <b>Loan Feature</b>
+                <p><%= loan_info.loan_feature %></p>
+            </div>
+            <div class="col-md-6 mb-4">
+                <b>Loan Documents Required</b>
+            <% for(var i=0;i<loan_docs1.length;i++) { %>
+                <p><%= loan_docs1[i].loan_documents %></p>
+            <% } %>    
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <b>Loan Application Process</b>
+            <% for(var i=0;i<loan_docs2.length;i++) { %>
+            <p><%= loan_docs2[i].loan_application %></p>
+            <% } %>    
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <b>Loan Image</b>
+                <img src="/uploads/<%= loan_info.loan_image %>">
+            </div>
+        </div>
+    </div>
+<%- include('footer.ejs') %>
+
+
+
+
+
+

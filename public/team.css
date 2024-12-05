@@ -1,0 +1,98 @@
+/* navbar end  */
+
+.bus_sec_team {
+    height: 350px;
+    background-image: url('https://png.pngtree.com/thumb_back/fh260/back_our/20190622/ourmid/pngtree-climbing-the-peak-of-the-team-s-success-image_214836.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    width: 100;
+    z-index: 1;
+}
+
+.bus_sec_team::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.7);
+    height: 350px;
+}
+
+@media (max-width:768px) {
+    .bus_sec_team::before {
+        height: 100%;
+    }
+}
+
+
+/* bread crunmb */
+
+.breadnav {
+    --bs-breadcrumb-divider: ">";
+}
+
+.breadnav .breadcrumb-item+.breadcrumb-item::before {
+    color: white;
+}
+
+
+/* team  part  */
+
+.team-head-text {
+    font-size: 48px;
+    font-weight: 900;
+    margin-bottom: 50px;
+}
+
+.card {
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 20px 7px;
+    padding: 30px 25px;
+}
+
+.name {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.position {
+    margin-top: 0;
+}
+
+.feature-text {
+    margin-top: 0;
+    color: rgb(122, 122, 122);
+    line-height: 30px;
+}
+
+.social-icons {
+    width: 70px;
+    display: flex;
+    text-align: center;
+    margin-left: 37%;
+    justify-content: space-between;
+}
+
+.team-image-wrapper {
+    clip-path: circle(50% at 50% 50%);
+    width: 130px;
+    height: 130px;
+    margin: 0 auto;
+}
+
+.team-member-image {
+    max-width: 100%;
+}
+
+@media (max-width: 500px) {
+    .card {
+        width: 100%;
+    }
+}
+
+
+/* footer css  */

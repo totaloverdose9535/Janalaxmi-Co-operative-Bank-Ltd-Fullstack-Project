@@ -1,0 +1,55 @@
+<%- include("navbar.ejs") %>
+
+<form action="/admin/save_chairman_slider" enctype="multipart/form-data" method="post">
+    <div class="container-fluid bg-white p-4">
+        <div class="row">
+            <div class="mb-3 col-md-12">
+                <h3>Add Chairman Slider Images</h3>
+            </div>
+            <div class="mb-3 col-md-6">
+                Chose Slider Images
+                <input type="file" name="chairman_slider_image" value="" required  class="form-control">
+            </div>
+            <div class="mb-3 col-md-12 ml-5">
+                <button class="btn btn-primary">Save Details</button>
+            </div>
+        </div>
+    </div>
+</form><hr>
+
+
+<div class="container-fluid bg-white p-4">
+    <div class="row">
+        <div class="mb-3 col-md-12 text-center">
+          <h3>Slider Images</h3>
+        </div>
+        <div class="mb-3 col-md-12"> 
+
+            <table class="table table-bordered table-stripped table-hover">
+            <tr>
+                <th style="width: 10%;" >Action</th>
+                <th>Sr</th>
+                <th>Images</th>
+            </tr>
+            <% for(var i=0;i<slider.length;i++) { %>
+                <tr>
+                    <td>
+                        <a href="delete_chairman_slider/<%-slider[i].chairman_slider_id%>" >
+                            <button class="btn btn-danger" onclick="alert('Are You Sure....?')">Delete</button>
+                        </a>
+                    </td>
+                    <td><%- i+1 %></td>
+                    <td>
+                        <img src="/uploads/<%-slider[i].chairman_slider_image%>" style="height: 100px;width: 200px;">
+                    </td>
+
+                </tr>
+            <% } %>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+<%- include("footer.ejs") %>

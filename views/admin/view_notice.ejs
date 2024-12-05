@@ -1,0 +1,28 @@
+<%- include("navbar.ejs") %>
+
+
+    <div class="container-fluid bg-white p-4">
+        <div class="row">
+            <div class="mb-3 col-md-12">
+                <h3><a href="/admin/add_notice" style="margin-left: 20px;">
+                    <i class="fa-sharp fa-solid fa-angle-left" style="margin-right: 20px;"></i></a>
+                    View Notice 
+                </h3>
+            </div>
+            <div class="mb-3 mt-5 col-md-12">
+                <img src="/uploads/<%-notices.notice_image%>" 
+                style="height: 400px;width: 100;margin: 0px 40px 40px 80px; ">
+            </div>
+            
+            <div class="mb-3 col-md-12 ml-5 text-center">
+                <a href="/admin/add_notice">
+                <button class="btn btn-primary">Back</button>
+                </a>
+            </div>
+            
+            
+        </div>
+    </div>
+
+
+<%- include("navbar.ejs") %>

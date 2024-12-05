@@ -1,0 +1,86 @@
+<%- include('navbar.ejs') %>
+
+<form action="/admin/save_loan_docs_apps" method="post" enctype="multipart/form-data">
+    <div class="container-fluid bg-white p-4">
+        <div class="row">
+            <div class="mb-3 col-md-12 text-center">
+                <h3>Documents and Application Process</h3>
+            </div>
+
+            <div class="mb-3 col-md-12">
+                Select Loan Type*
+                <select name="loan_type_id" class="form-control h-50">
+                <option >Select Loan Type</option>
+            <% for(var i=0;i<loan_details.length;i++) { %>
+                <option value="<%=loan_details[i].loan_type_id%>"><%=loan_details[i].loan_name%></option>
+            <% } %>
+                </select>
+            </div>
+
+            <div class="mb-3 col-md-6">
+                Add Documents Required*
+                <input type="text" name="loan_documents" class="form-control">
+            </div>
+
+            <div class="mb-3 col-md-6">
+                Add Application Process*
+                <input type="text" name="loan_application" class="form-control">
+            </div>
+
+            <div class="mb-3 col-md-12 text-center">
+                <br>
+                <button class="btn btn-primary">Save details</button>
+            </div>
+        </div>
+    </div>
+</form>
+<br>
+
+
+
+<div class="container-fluid bg-white p-4">
+    <div class="row">
+        <div class="mb-3 col-md-12 text-center">
+            <h3>Documents and Application Process list</h3>
+        </div>
+        <div class="mb-3 col-md-12">
+            <table class="table table-sm table-bordered" >
+                <tr>
+                    <th>Action</th>
+                    <th>Loan Type ID</th>
+                    <th>Required Documents</th>
+                    <th>Application Process</th>
+                </tr>
+                <% for(var i=0; i<loan_docs.length; i++) {%>
+                <tr>
+                    <td>
+                        <a href="/admin/delete_app_docs/<%=loan_docs[i].app_docs_id%>" title="Delete Loan Type">
+                            <button class="btn btn-sm btn-danger" onclick="alert('Are You Sure...?')">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </a>
+                    </td>
+                    <td><%= loan_docs[i].loan_type_id %></td>
+                    
+                    <td><%= loan_docs[i].loan_documents %></td>
+                    <td><%= loan_docs[i].loan_application %></td>
+                </tr>
+                <% } %>
+            </table>
+        </div>
+        
+    </div>
+</div>
+
+
+<%- include('footer.ejs') %>
+
+
+
+<!-- 
+CREATE TABLE loan_docs_apps (app_docs_id INT PRIMARY KEY AUTO_INCREMENT,
+                            loan_type_id INT,
+                            loan_documents VARCHAR(100),
+                            loan_application VARCHAR(100) ) -->
+
+

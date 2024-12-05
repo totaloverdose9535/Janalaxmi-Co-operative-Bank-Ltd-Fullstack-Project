@@ -1,0 +1,142 @@
+<%- include("navbar.ejs") %>
+<div class="container-fluid bg-white p-4">
+    <div class="row">
+        <div class="col-md-6">
+            <form action="/admin/save_gallery_details" method="post" enctype="multipart/form-data">
+                <div class="container-fluid bg-white p-4">
+                    <div class="row">
+                        <div class="mb-3 col-md-12 text-center">
+                            <h3>Add To Gallery</h3>
+                        </div>
+
+                        <div class="mb-3 col-md-12">
+                            Image Caption*
+                            <input type="text" name="gallery_image_caption" class="form-control">
+                        </div>
+
+                        <div class="mb-3 col-md-12">
+                            Gallery Image*
+                            <input type="file" name="gallery_image" class="form-control" accept="image/*">
+                        </div>
+
+                        <div class="mb-3 col-md-12">
+                            Video Caption*
+                            <input type="text" name="gallery_video_caption" class="form-control">
+                        </div>
+
+                        <div class="mb-3 col-md-12">
+                            Gallery Video*
+                            <input type="file" name="gallery_video" class="form-control" accept="video/*">
+                        </div>
+
+                        <div class="mb-3 col-md-12 text-center">
+                            <br>
+                            <button class="btn btn-primary">Save To Gallery</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <form action="/admin/save_gallery_background" method="post" enctype="multipart/form-data">
+                <div class="container-fluid bg-white p-4">
+                    <div class="row">
+                        <div class="mb-3 col-md-12 text-center">
+                            <h3>Add Gallery Background</h3>
+                        </div>
+
+                        <div class="mb-3 col-md-12">
+                            Gallery Background Image*
+                            <input type="file" name="gallery_bg_image" class="form-control" accept="image/*" required>
+                        </div>
+
+                        <div class="mb-3 col-md-12">
+                            Gallery Image* <br>
+                            <img src="/uploads/<%= gallery_bg.gallery_bg_image %>" width="330px" alt="">
+                        </div>
+
+                        <div class="mb-3 col-md-12 text-center">
+                            <br>
+                            <button class="btn btn-primary">Change Gallery Background</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<br><br>
+
+<div class="container-fluid bg-white p-4">
+    <div class="row">
+        <div class="col-md-6">
+                    <div class="mb-3 col-md-12 text-center">
+                        <h3>Gallery Images list</h3>
+                    </div>
+                    <div class="mb-3 col-md-12">
+                        <table class="table table-sm table-bordered" >
+                            <tr>
+                                <th>Action</th>
+                                <th>Sr.No</th>
+                                <th>Image Caption</th>
+                                <th>Image</th>
+                            </tr>
+                            <% for(var i=0; i<gallery_image.length; i++) { %>
+                            <tr>
+                                <td>
+                                <a href="/admin/Delete_image_details/<%=gallery_image[i].gallery_id%>" title="Delete Image">
+                                    <button class="btn btn-sm btn-danger">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </a>
+                                </td>
+                                <td><%= i+1 %></td>
+                                <td><%= gallery_image[i].gallery_image_caption %></td>
+                                <td>
+                                    <img src="/uploads/<%= gallery_image[i].gallery_image %>" width="150px">
+                                </td>
+                            </tr>
+                            <% } %>
+                        </table>
+                    </div>
+        </div>
+        <div class="col-md-6">
+                    <div class="mb-3 col-md-12 text-center">
+                        <h3>Gallery Videos list</h3>
+                    </div>
+                    <div class="mb-3 col-md-12">
+                        <table class="table table-sm table-bordered" >
+                            <tr>
+                                <th>Action</th>
+                                <th>Sr.No</th>
+                                <th>video Caption</th>
+                                <th>video</th>
+                            </tr>
+                            <% for(var i=0; i<gallery_video.length; i++) { %>
+                            <tr>
+                                <td>
+                                <a href="/admin/Delete_video_details/<%=gallery_video[i].gallery_id%>" title="Delete video">
+                                    <button class="btn btn-sm btn-danger">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </a>
+                                </td>
+                                <td><%= i+1 %></td>
+                                <td><%= gallery_video[i].gallery_video_caption %></td>
+                                <td>
+                                    <video width="150px" controls>
+                                        <source src="/uploads/<%= gallery_video[i].gallery_video %>" type="video/mp4">
+                                    </video>
+                                </td>
+                            </tr>
+                            <% } %>
+                        </table>
+                    </div>
+        </div>
+    </div>
+</div>
+
+
+<%- include("footer.ejs") %>

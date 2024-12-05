@@ -1,0 +1,30 @@
+<%- include("navbar.ejs") %>
+
+<form action="/admin/save_about_our_vision" enctype="multipart/form-data" method="post">
+    <div class="container-fluid bg-white p-4">
+        <div class="row">
+            <div class="mb-3 col-md-12 col-sm-12 text-center">
+                <h3> About Our Vision</h3>
+            </div>
+           
+            <div class="mb-5 col-md-12 col-sm-12">
+                Description
+                <textarea name="our_vision_description"  class="form-control" style="height: 100px;">
+                    <%-vision.our_vision_description%>
+                </textarea>
+            </div>
+            <div class="mb-4 col-md-4 col-sm-12">
+                Choose Our Vision Image
+                <input type="file" name="our_vision_image"  class="form-control">
+            </div>
+            <div class="mb-4 col-md-4 col-sm-12">
+                <img src="/uploads/<%-vision.our_vision_image%>" style="height: 150px;">
+            </div>
+            <div class="col-md-12 text-center mt-2">
+                <button class="btn btn-primary btn-lg">Save </button>
+            </div>
+        </div>
+    </div>
+</form><br><hr>
+
+<%- include("footer.ejs") %>

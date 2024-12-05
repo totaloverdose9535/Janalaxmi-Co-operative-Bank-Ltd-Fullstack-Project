@@ -1,0 +1,317 @@
+<!-- footer section  -->
+
+<footer id="dk-footer" class="dk-footer ">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-4 mt-2">
+                <div class="dk-footer-box-info">
+                    <a href="/" class="footer-logo">
+                                <img src="/uploads/<%-footer_info.footer_logo%>" alt="footer_logo" class="img-fluid">
+                            </a>
+                    <p class="footer-info-text p text-white">
+                        <%-footer_info.footer_logo_title%>
+                    </p>
+                    <div class="footer-social-link">
+                        <h3>Follow us</h3>
+                        <ul>
+                            <li>
+                                <a href="<%-company_info.facebook_link%>">
+                                    <i class="fa-brands fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="<%-company_info.twitter_link%>">
+                                    <i class="fa-brands fa-twitter"></i> </a>
+                            </li>
+                            <li>
+                                <a href="<%-company_info.google_link%>">
+                                    <i class="fa-brands fa-google-plus"></i>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="<%-company_info.instagram_link%>">
+                                    <i class="fa-brands fa-instagram"></i> </a>
+                            </li>
+                            <li>
+                                <a href="<%-company_info.linkedin_link%>">
+                                    <i class="fa-brands fa-linkedin"></i> </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <!-- End Social link -->
+                </div>
+                <!-- End Footer info -->
+                <div class="footer-awarad">
+                    <img src="public/images/icon/best.png" alt="">
+                    <p></p>
+                    <div class="location border" width="300" height="150">
+                        <%-footer_info.map%>
+                            <!-- <iframe src="<%-footer_info.map%>"
+                                    width="300" height="150" style="border:0; margin-top: -30px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+                    </div>
+                </div>
+
+            </div>
+            <!-- End Col -->
+            <div class="col-md-12 col-lg-8">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="contact-us">
+                            <div class="contact-icon">
+                                <i class="fa fa-map-o" aria-hidden="true"></i>
+                            </div>
+                            <!-- End contact Icon -->
+                            <div class="contact-info cntaddress">
+                                <h3>
+                                    <%-footer_info.address%>
+                                </h3>
+                                <p class="p">
+                                    <%-footer_info.district%>,
+                                        <%-footer_info.pincode%>
+                                </p>
+                            </div>
+                            <!-- End Contact Info -->
+                        </div>
+                        <!-- End Contact Us -->
+                    </div>
+                    <!-- End Col -->
+                    <div class=" col-md-6">
+                        <div class="contact-us contact-us-last">
+                            <div class="contact-icon">
+                                <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                            </div>
+                            <!-- End contact Icon -->
+                            <div class="contact-info">
+                                <h3>+91
+                                    <%-company_info.company_mobile%>
+                                        </</h3>
+                                        <p>Give us a call</p>
+                            </div>
+                            <!-- End Contact Info -->
+                        </div>
+                        <!-- End Contact Us -->
+                    </div>
+                    <!-- End Col -->
+                </div>
+                <!-- End Contact Row -->
+                <div class="row">
+                    <div class="col-md-12 col-lg-6">
+                        <div class="footer-widget footer-left-widget">
+                            <div class="section-heading">
+                                <h3>Useful Links</h3>
+                                <span class="animate-border border-black"></span>
+                            </div>
+                            <ul>
+                                <li>
+                                    <a href="/">Home</a>
+                                </li>
+                                <li>
+                                    <a href="/about_janlakshmi">About us</a>
+                                </li>
+                                <li>
+                                    <a href="/loan_page">Loan Schmes</a>
+                                </li>
+                                <li>
+                                    <a href="/services">Services</a>
+                                </li>
+                                <li>
+                                    <a href="deposit_scheme_page">Deposit Schmes</a>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <a href="/gallery">Gallary</a>
+                                </li>
+                                <li>
+                                    <a href="/notice">Notice </a>
+                                </li>
+                                <li>
+                                    <a href="/contact_us">Contact Us</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <!-- End Footer Widget -->
+                    </div>
+                    <!-- End col -->
+                    <div class="col-md-12 col-lg-6">
+                        <div class="footer-widget footer-left-widget">
+                            <div class="section-heading">
+                                <h3>Loans and Deposits</h3>
+                                <span class="animate-border border-black"></span>
+                            </div>
+
+
+                            <ul>
+                                <% for(var i=0;i<loan_scheme.length;i++) { %>
+                                    <li>
+                                        <a href="/loan_details/<%=loan_scheme[i].loan_type_id%>">
+                                            <%=loan_scheme[i].loan_name%>
+                                        </a>
+                                    </li>
+                                    <% } %>
+                                        <!-- <li>
+                                            <a href="#">Property loan</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Personal loan</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Business Loan</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">FD Loan</a>
+                                        </li> -->
+                            </ul>
+                            <ul>
+                                <li>
+                                    <a href="/deposit_scheme_page">Deposite Scheme</a>
+                                </li>
+                                <li>
+                                    <a href="/current_deposit_scheme">Current Deposite</a>
+                                </li>
+                                <li>
+                                    <a href="/term_deposit_scheme">Term Deposite </a>
+                                </li>
+                                <li>
+                                    <a href="/daily_deposit_scheme">Daily Deposit</a>
+                                </li>
+                                <li>
+                                    <a href="/savings_deposit_scheme">Saving Deposit</a>
+                                </li>
+                                <li>
+                                    <a href="/fixed_deposit_scheme">Fixed Deposit</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <!-- End Footer Widget -->
+                    </div>
+                    <!-- End Col -->
+                </div>
+                <!-- End Row -->
+            </div>
+            <!-- End Col -->
+        </div>
+        <!-- End Widget Row -->
+    </div>
+    <!-- End Contact Container -->
+
+
+    <div class="copyright">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-8 cpy">
+                    <span>Copyright © 2024, All Right Reserved  Design & developed BY <a href="https://a2zithub.org/" class="fw-bold text-warning">A2Z IT HUB PVT LTD </a></span>
+                </div>
+                <!-- End Col -->
+                <div class="col-md-4 d-flex justify-content-center">
+                    <div class="copyright-menu ">
+                        <ul>
+
+                            <li>
+                                <a href="/tearm&condition">Terms</a>
+                            </li>
+                            <li>
+                                <a href="/privacy_policy">Privacy Policy</a>
+                            </li>
+                            <li>
+                                <a href="/faq">FAQ's</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- End col -->
+            </div>
+            <!-- End Row -->
+        </div>
+        <!-- End Copyright Container -->
+    </div>
+    <!-- End Copyright -->
+    <!-- Back to top -->
+
+    <a href="#">
+        <div id="back-to-top" class="back-to-top">
+            <button class="btn btn-dark" title="Back to Top" style="display: block;">
+				<i class="fa fa-angle-up"></i>
+			
+			</button>
+        </div>
+    </a>
+    <!-- End Back to top -->
+</footer>
+
+
+
+
+
+
+
+
+<!-- auto time and date function for enquiry form start -->
+<script>
+    function updateDateTime() {
+        const currentDate = new Date();
+        document.getElementById('currentDate').value = currentDate.toLocaleDateString();
+        document.getElementById('currentTime').value = currentDate.toLocaleTimeString();
+    }
+
+    // Update date and time every second
+    setInterval(updateDateTime, 1000);
+
+    // Initialize on page load
+    window.onload = updateDateTime;
+</script>
+
+<!-- auto time and date function for enquiry form end -->
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+<script src="/script.js"></script>
+<script src="/Service.js"></script>
+<script src="/notice.js"></script>
+
+<script src="/script2.js"></script>
+<script src="/gallary.js"></script>
+
+<!-- new code script -->
+
+<script>
+    function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    document.getElementById("defaultOpen").click();
+</script>
+
+
+
+<!-- Js CDN Online -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.2/dist/chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<!-- Js Link File  -->
+<script src="/script2.js"></script>
+
+<script>
+    AOS.init();
+</script>
+
+</body>
+
+</html>

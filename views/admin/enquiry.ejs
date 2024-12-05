@@ -1,0 +1,72 @@
+<%- include("navbar.ejs") %>
+
+
+<div class="container mt-5 mb-3">
+    <h2>Export and Print Page</h2>
+    <button class="btn btn-primary" onclick="copyText()">Copy Text</button>
+    <button class="btn btn-success" onclick="downloadCSV()">Download CSV</button>
+    <button class="btn btn-info" onclick="downloadExcel()">Download Excel</button>
+    <button class="btn btn-danger" onclick="downloadPDF()">Download PDF</button>
+    <button class="btn btn-warning" onclick="printPage()">Print Page</button>
+</div>
+
+
+<div id="content" class="container-fluid bg-white p-4">
+    <div class="row">
+        <div class="mb-3 col-md-12 text-center">
+          <h3>Enquery Details</h3>
+        </div>
+        <div class="mb-3 col-md-12"> 
+
+            <table class="table table-bordered table-stripped table-hover">
+        <tr>
+            <th>action</th>
+            <th>Sr</th>
+            <th>Enquiry Type</th>
+            <th>Name</th>
+            <th>Mobile</th>
+            <th>Email</th>
+            <th>Date</th>
+            <th>Time</th>
+        </tr>
+        <% for(var i=0;i<enquirys.length;i++) {  
+                
+            
+            
+        %>
+            <tr>
+                <td>
+                    <a href="complete_enquiry/<%-enquirys[i].enquiry_id%>">
+                        <button class="btn btn-primary">Complete</button>
+                    </a>
+                </td>
+                <th><%-i+1%></th>
+                <th><%- enquirys[i].enquiry_type%></th>
+                <th><%- enquirys[i].name_of_enquired%></th>
+                <th><%- enquirys[i].mobile_of_enquired%></th>
+                <th><%- enquirys[i].email_of_enquired%></th>
+                <th>
+                    <%- enquirys[i].currentdate%><br>
+                
+                </th>
+                <th><%- enquirys[i].currenttime%></th>
+            </tr>
+        <% } %>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+<%- include("footer.ejs") %>
+
+
+
+
+
+

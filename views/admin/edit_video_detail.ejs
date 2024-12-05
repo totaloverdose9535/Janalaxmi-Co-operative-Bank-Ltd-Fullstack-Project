@@ -1,0 +1,38 @@
+<%- include("navbar.ejs") %>
+
+<form action="/admin/update_video/<%-video[0].video_id%>" enctype="multipart/form-data" method="post">
+    <div class="container-fluid bg-white p-4">
+        <div class="row">
+            <div class="mb-3 col-md-12 col-sm-12 text-center">
+                <h3> Add Video</h3>
+            </div>
+             
+            <div class="mb-3 col-md-6 col-sm-12">
+                Video Link  
+                <input type="url" name="video_link" value="<%-video[0].video_link%>" class="form-control">
+            </div>
+            <div class="mb-3 col-md-6 col-sm-12">
+                Video Title 
+                <textarea name="video_title"  class="form-control"><%-video[0].video_title%></textarea> 
+                
+            </div>
+            <div class="mb-3 col-md-6 col-sm-12">
+                 Title  
+                <input type="text" name="card_title" value="<%-video[0].card_title%>" class="form-control">
+            </div>
+            <div class="mb-3 col-md-6 col-sm-12">
+                Video Discription  
+                <textarea name="video_description"  class="form-control"><%-video[0].video_description%></textarea> 
+                
+            </div>
+           
+            <div class="col-md-12 text-center">
+                <button class="btn btn-primary btn-lg">Save </button>
+            </div>
+        </div>
+    </div>
+</form><br><hr>
+
+
+
+<%- include("footer.ejs") %>

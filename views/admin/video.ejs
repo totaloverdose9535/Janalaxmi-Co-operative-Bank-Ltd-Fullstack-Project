@@ -1,0 +1,84 @@
+<%- include("navbar.ejs") %>
+
+<form action="/admin/save_video" enctype="multipart/form-data" method="post">
+    <div class="container-fluid bg-white p-4">
+        <div class="row">
+            <div class="mb-3 col-md-12 col-sm-12 text-center">
+                <h3> Add Video</h3>
+            </div>
+            
+            <div class="mb-3 col-md-6 col-sm-12">
+                Video Link  
+                <input type="url" name="video_link" required class="form-control">
+            </div>
+            <div class="mb-3 col-md-6 col-sm-12">
+                Video Title 
+                <textarea name="video_title" required class="form-control"></textarea> 
+                <!-- <input type="text" name="video_title" required class="form-control"> -->
+            </div>
+            <div class="mb-3 col-md-6 col-sm-12">
+                 Title  
+                <input type="text" name="card_title" required class="form-control">
+            </div>
+            <div class="mb-3 col-md-6 col-sm-12">
+                Video Discription  
+                <textarea name="video_description" required class="form-control"></textarea> 
+                <!-- <input type="text" name="video_description" required class="form-control"> -->
+            </div>
+           
+            <div class="col-md-12 text-center">
+                <button class="btn btn-primary btn-lg">Save </button>
+            </div>
+        </div>
+    </div>
+</form><br><hr>
+
+<div class="container-fluid bg-white p-4">
+    <div class="row">
+        <div class="mb-3 col-md-12 text-center">
+          <h3>Video List</h3>
+        </div>
+        <div class="mb-3 col-md-12"> 
+
+            <table class="table table-bordered table-stripped table-hover">
+            <tr>
+                <th style="width: 25%;" >Action</th>
+                <th>Sr</th>
+                <th style="width: 250px;">Video Link</th>
+                <th>Video Title</th>
+                <th>Title</th>
+                <th>Video Description</th>
+            </tr>
+            <% for(var i=0;i<videos.length;i++) { %>
+                <tr>
+                    <td>
+                        <a href="/admin/edit_video_detail/<%-videos[i].video_id%>" class="mb-2" >
+                            <button class="btn btn-primary" onclick="alert('Are You Sure....?')">
+                                <i class="fa fa-edit"></i>
+                            </button>
+                        </a><br>
+                        <a href="/admin/delete_video/<%-videos[i].video_id%>" class="" >
+                            <button class="btn btn-danger" onclick="alert('Are You Sure....?')">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </a>
+                    </td>
+                    <td><%- i+1 %></td>
+                    <td><%-videos[i].video_link%></td>
+                    <td><%-videos[i].video_title%></td>
+                    <td><%-videos[i].card_title%></td>
+                    <td><%-videos[i].video_description%></td>
+                    
+
+                </tr>
+            <% } %>
+            
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<%- include("footer.ejs") %>
+
+ 

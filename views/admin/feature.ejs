@@ -1,0 +1,94 @@
+<%- include("navbar.ejs") %>
+<form action="/admin/save_feature" enctype="multipart/form-data" method="post">
+    <div class="container-fluid bg-white p-4">
+        <div class="row">
+            <div class="mb-3 col-md-12 col-sm-12 text-center">
+                <h3> Add Feature</h3>
+            </div>
+            <div class="mb-3 col-md-2 col-sm-12">
+                
+            </div>
+            <div class="mb-3 col-md-7 col-sm-12">
+                Feature  
+                <input type="text" name="feature" required class="form-control">
+            </div>
+           
+            <div class="col-md-12 text-center">
+                <button class="btn btn-primary btn-lg">Save </button>
+            </div>
+        </div>
+    </div>
+</form><br><hr>
+
+
+
+<div class="container-fluid bg-white p-4">
+    <div class="row">
+        <div class="mb-3 col-md-12 text-center">
+          <h3>Feature Heading</h3>
+        </div>
+        <div class="mb-3 col-md-12"> 
+
+            <table class="table table-bordered table-stripped table-hover text-center">
+            <tr class="text-center">
+                <th style="width: 20%;margin-left: 20px;text-align: center;">Action</th>
+                <th style="text-align: center;">Feature Heading</th>
+            </tr>
+            <% for (var i=0;i<heading.length;i++) { %>
+            <tr>
+                <td>
+                    <a href="/admin/edit_heading/<%-heading[0].heading_id%>" >
+                        <button class="btn btn-primary" onclick="alert('Are You Sure....?')">
+                            <i class="fa fa-edit"></i>
+                        </button>
+                    </a>
+                </td>
+                <td><%-heading[0].feature_heading%></td>
+            </tr>
+            <% }%>
+            </table>
+        </div>
+    </div>
+</div><br>
+
+<div class="container-fluid bg-white p-4">
+    <div class="row">
+        <div class="mb-3 col-md-12 text-center">
+          <h3>Home Feature List</h3>
+        </div>
+<hr>
+       <table class="table table-border table-stripped table-hover">
+            <tr style="text-align: center;">
+                <th style="width: 15%; margin-left: 30px;text-align: center;" >Action</th>
+                <th>Sr</th>
+                <th class="text-center">Features</th>
+            </tr>
+            <% for (var i=0;i<features.length;i++) { %>
+                <tr>
+                    <td class="text-center">
+                        <a href="/admin/edit_feature/<%-features[i].feature_id%>" >
+                            <button class="btn btn-primary" onclick="alert('Are You Sure....?')">
+                                <i class="fa fa-edit"></i>
+                            </button>
+                        </a>
+                        <a href="/admin/delete_feature/<%-features[i].feature_id%>" >
+                            <button class="btn btn-danger" onclick="alert('Are You Sure....?')">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </a>
+                    </td>
+                    <td><%- i+1%></td>
+                    <td><%-features[i].feature%></td>
+                </tr>
+                <% }%>
+        </table>
+    </div>
+</div>
+
+
+<%- include("footer.ejs") %>
+
+<!-- CREATE TABLE heading (heading_id INT PRIMARY KEY AUTO_INCREMENT, feature_heading TEXT, eligibility_heading TEXT,
+                                document_heading TEXT); -->
+    <!-- INSERT INTO heading (feature_heading, eligibility_heading, document_heading) VALUES 
+                    ('PARSRAM','SUBHASH','GAIKWAD'); -->

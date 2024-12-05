@@ -1,0 +1,36 @@
+<%- include("navbar.ejs") %>
+
+
+<form action="/admin/save_service_info" enctype="multipart/form-data" method="post">
+    <div class="container-fluid bg-white p-4">
+        <div class="row">
+            <div class="mb-3 col-md-12 text-center">
+                <h3>Service Page Info</h3>
+            </div>
+            <div class="mb-3 col-md-6">
+                Choose Service Page Image
+                <input type="file" name="service_page_image" value=""   class="form-control">
+            </div>
+            <div class="mb-3 col-md-4">
+                <img src="/uploads/<%-s_info.service_page_image%>" style="height: 100px;width: 150px;">
+                
+            </div>
+            <div class="mb-3 col-md-6">
+                Service Page Title
+                <input type="text" name="service_page_title" value="<%-s_info.service_page_title%>"   class="form-control">
+            </div>
+            <div class="mb-3 col-md-6">
+                Service Page Heading
+                <input type="text" name="service_page_heading" value="<%-s_info.service_page_heading%>"   class="form-control">
+            </div>
+            <div class="mb-3 col-md-12 ml-5">
+                <button class="btn btn-primary">Save Details</button>
+            </div>
+        </div>
+    </div>
+</form><hr>
+
+
+ 
+
+<%- include("footer.ejs") %>

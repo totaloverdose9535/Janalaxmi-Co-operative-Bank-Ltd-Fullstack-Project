@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Janalaxmi Co-operative Bank Ltd.</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!--  Favicons -->
+  
+  <!-- <link href="/admin/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/admin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/admin/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/admin/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/admin/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="/admin/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="/admin/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="/admin/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/admin/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Nice/Admin
+  * Template URL: https://bootstrapmade.com/nice-/admin-bootstrap-/admin-html-template/
+  * Updated: Apr 20 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+  <script src="https://kit.fontawesome.com/00aea3e468.js" crossorigin="anonymous"></script>
+
+  <!-- ck editor -->
+  <script src="https://cdn.ckeditor.com/ckeditor5/12.3.0/classic/ckeditor.js"></script>
+
+  <!-- <script src="https://cdn.ckeditor.com/4.8.0/full-all/ckeditor.js"></script> -->
+</head>
+
+<body>
+    <% if(is_login) { %>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+      <a href="/admin/home" class="logo d-flex align-items-center mx-3">
+        <!-- <img src="/admin/img/logo.png" alt=""> -->
+        <span class="d-none d-lg-block">Janlakshmi Multistate</span>
+      </a>
+      
+    </div><!-- End Logo -->
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="/uploads/company_logo.jpeg"  alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">Janlakshmi Multistate</span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>Janalaxmi Multistate</h6>
+            </li>
+            <li>  
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="/admin/logout">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav>
+    <!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link " href="/admin/home">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span> 
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link " href="/admin/team">
+          <i class="fas fa-tachometer-alt"></i>
+          <span>Our Team</span> 
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link " href="/admin/about_company">
+          <i class="fas fa-industry"></i>
+          <span>About Company</span> 
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#aboutus" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-house-door"></i><span>Home  Page</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="aboutus" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+
+          <li class="nav-item">
+            <a href="/admin/home_about_us_info"><i class="bi bi-pencil-square fs-6"></i>About Us Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="/admin/top_slider"><i class="fa-solid fa-sliders"></i>Top Slider</a>
+            
+        </li>
+        <li class="nav-item">
+            <a href="/admin/home_our_service"><i class="fa-brands fa-usps"></i>Home Our Service</a>
+        </li>
+        <li class="nav-item">
+            <a href="/admin/home_facility_provide"><i class="fa-brands fa-usps"></i>Home Facility Provide</a>
+        </li>
+        <li class="nav-item">
+            <a href="#"><i class="fa-brands fa-usps"></i>Contact Us Form</a>
+        </li>
+        <li class="nav-item">
+            <a href="/admin/customer_support"><i class="fa-brands fa-usps"></i>Customer Support Form</a>
+        </li>
+        <li class="nav-item">
+            <a href="/admin/feature"><i class="fa-brands fa-usps"></i>Features</a>
+        </li>
+        <li class="nav-item">
+            <a href="/admin/eligibility"><i class="fa-brands fa-usps"></i>Eligiblity</a>
+        </li>
+        <li class="nav-item">
+            <a href="/admin/document"><i class="fa-brands fa-usps"></i>Document</a>
+        </li>
+        <li class="nav-item">
+            <a href="/admin/video"><i class="fa-brands fa-usps"></i>Videos</a>
+        </li>
+        <li class="nav-item">
+            <a href="/admin/bank_partner"><i class="fa-brands fa-usps"></i>Bank Partner</a>
+        </li>
+        <li class="nav-item">
+            <a href="/admin/footer"><i class="fa-brands fa-usps"></i>Footer Part</a>
+        </li>
+        </ul>
+
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#aboutpage" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-file-earmark"></i><span>About Page</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="aboutpage" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+
+          <li >
+            <a href="/admin/about_organization"><i class="bi bi-pencil-square fs-6"></i>About Info</a>
+        </li>
+        <li >
+            <a href="/admin/add_about_branch"><i class="bi bi-pencil-square fs-6"></i>Add Branch </a>
+        </li>
+        <li >
+            <a href="/admin/about_our_vision"><i class="bi bi-pencil-square fs-6"></i>Our Vision </a>
+        </li>
+        <li >
+            <a href="/admin/about_our_History"><i class="bi bi-pencil-square fs-6"></i>Our History </a>
+        </li>
+        <li >
+            <a href="/admin/about_our_mission"><i class="bi bi-pencil-square fs-6"></i>Our Mission </a>
+        </li>
+        <li >
+            <a href="/admin/get_in_touch"><i class="bi bi-pencil-square fs-6"></i>Get In Touch </a>
+        </li>
+        <li >
+            <a href="/admin/happy_customer"><i class="bi bi-pencil-square fs-6"></i>Happy Customer Review </a>
+        </li>
+
+          
+        </ul>
+      </li>
+
+
+
+
+
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#blogpage" data-bs-toggle="collapse" href="#">
+          <i class="fa-solid fa-book"></i><span>Deposite Page</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="blogpage" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="/admin/deposit_schemes_page"><i class="bi bi-plus-square fs-6"></i>Deposit Schemes Page</a>
+        </li>
+        <li>
+            <a href="/admin/current_deposit_scheme_page"><i class="bi bi-plus-square fs-6"></i>Current Deposit Scheme Page</a>
+        </li>
+        
+        <li>
+            <a href="/admin/term_deposit_scheme"><i class="bi bi-plus-square fs-6"></i>Term Deposit Scheme Page</a>
+        </li>
+
+        <li>
+            <a href="/admin/daily_deposit_scheme_page"><i class="bi bi-plus-square fs-6"></i>Daily Deposit Scheme Page</a>
+        </li>
+
+        <li>
+            <a href="/admin/saving_deposit_scheme"><i class="bi bi-plus-square fs-6"></i>Savings Deposit Scheme Page</a>
+        </li>
+
+        <li>
+            <a href="/admin/fixed_deposit_scheme_page"><i class="bi bi-plus-square fs-6"></i>Fixed Deposit Scheme Page</a>
+        </li>
+    
+        </ul>
+      </li>
+
+
+
+
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#gallery" data-bs-toggle="collapse" href="#">
+          <i class="fa-solid fa-user"></i><span>Chairman Page</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="gallery" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li >
+            <a href="/admin/chairman_slider">Chairman slider</a>
+        </li>
+        <li >
+            <a href="/admin/chairman_decription">Chairman Detail </a>
+        </li>
+        <li >
+            <a href="/admin/chairman_gallery">Chairman Gallery </a>
+        </li>
+
+         
+
+        </ul>
+      </li>
+
+
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#project" data-bs-toggle="collapse" href="#">
+          <i class="fa-solid fa-screwdriver-wrench"></i>
+          <span>Service Page</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="project" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li >
+            <a href="/admin/service_info">Services Info</a>
+        </li>
+        <li >
+            <a href="/admin/add_service">Add Services </a>
+        </li>
+         
+
+        </ul>
+      </li>
+
+
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#service" data-bs-toggle="collapse" href="#">
+          
+          <i class="fa-solid fa-layer-group"></i><span>Notice Page</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="service" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li >
+            <a href="/admin/notice_info">Notice Page Info</a>
+        </li>
+        <li >
+            <a href="/admin/add_Notice">Add Notice </a>
+        </li>
+         
+
+        </ul>
+      </li>
+
+
+
+
+
+
+
+
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#contact" data-bs-toggle="collapse" href="#">
+          <i class="fa-solid fa-copy"></i><span>Loan Page</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="contact" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="/admin/add_loan">Add Loan</a>
+        </li>
+        <!-- <li>
+            <a href="/admin/loan_list">Loan List</a>
+        </li> -->
+        <li>
+            <a href="/admin/loan_docs_apps">Add Documents And Applications</a>
+        </li>
+         
+
+        </ul>
+      </li>
+
+
+
+      
+
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#enquiry" data-bs-toggle="collapse" href="#">
+          <i class="fa-solid fa-copy"></i><span>Enquiry Pages</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="enquiry" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="/admin/enquiry">Home Page Enquiry List</a>
+        </li>
+        <li>
+          <a href="/admin/service_enquiry">Service Page Enquiry List</a>
+      </li>
+        <li>
+            <a href="/admin/loan_enquiry">Loan Enquiry List</a>
+        </li>
+        <li>
+          <a href="/admin/current_deposite_enquiry">Deposit Enquiry List</a>
+      </li>
+        <li>
+            <a href="/admin/contact_enquiry">Contact Us Enquiry List</a>
+        </li>
+         
+
+        </ul>
+      </li>
+
+
+
+
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#gallery" data-bs-toggle="collapse" href="#">
+          <i class="fa-solid fa-photo-film"></i><span>Gallery Page</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="gallery" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li class="border-top">
+            <a href="/admin/gallery_info">
+                <i class="fa-solid fa-photo-film"></i>Gallery Info
+            </a>
+        </li>
+
+        </ul>
+      </li>
+      
+
+
+
+      
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#faq" data-bs-toggle="collapse" href="#">
+          <i class="fa-solid fa-question"></i><span>FAQ's Page</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="faq" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="/admin/faq">Add FAQ Questions And Answers</a>
+        </li>
+
+        </ul>
+      </li>
+
+
+
+
+
+
+
+
+
+
+    </ul>
+
+  </aside>
+  <!-- End Sidebar-->
+<% } %>
+  <main id="main" class="main">
+
+ 

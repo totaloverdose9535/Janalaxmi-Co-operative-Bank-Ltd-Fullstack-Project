@@ -1,0 +1,49 @@
+<%- include("navbar.ejs") %>
+
+<form action="/admin/save_footer_detail" enctype="multipart/form-data" method="post">
+    <div class="container-fluid bg-white p-4">
+        <div class="row">
+            <div class="mb-3 col-md-12 col-sm-12 text-center">
+                <h3> Footer Details</h3>
+            </div>
+            
+            <div class="mb-3 col-md-6 col-sm-12">
+                Footer Logo 
+                <input type="file" name="footer_logo"  class="form-control">
+            </div>
+            <div class="mb-3 col-md-6 col-sm-12">
+                <img src="/uploads/<%-footer_info.footer_logo%>" style="height: 100px;width: 250px;float: left;">
+                
+            </div>
+            <div class="mb-3 col-md-6 col-sm-12">
+                Footer Logo Title 
+                <input type="text" name="footer_logo_title" value="<%-footer_info.footer_logo_title%>" class="form-control">
+            </div>
+            <div class="mb-3 col-md-6 col-sm-12">
+                Address
+                <input type="text" name="address" value="<%-footer_info.address%>" class="form-control">
+            </div>
+            <div class="mb-3 col-md-6 col-sm-12">
+                District
+                <input type="text" name="district" value="<%-footer_info.district%>" class="form-control">
+            </div>
+            <div class="mb-3 col-md-6 col-sm-12">
+                Pincode 
+                <input type="text" name="pincode" value="<%-footer_info.pincode%>" class="form-control">
+            </div>
+            <div class="mb-3 col-md-12 col-sm-12">
+                Map 
+                <textarea name="map" class="form-control" style="height: 150px;"> <%-footer_info.map%></textarea>
+                <!-- <input type="text" name="map" value="<%-footer_info.map%>" class="form-control"> -->
+            </div>
+            
+
+            <div class="col-md-12 text-center">
+                <button class="btn btn-primary btn-lg">Save </button>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<%- include("footer.ejs") %>

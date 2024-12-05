@@ -1,0 +1,77 @@
+<%- include("navbar.ejs") %>
+
+
+<form action="/admin/save_home_our_service" enctype="multipart/form-data" method="post">
+    <div class="container-fluid bg-white p-4">
+        <div class="row">
+            <div class="mb-3 col-md-12 text-center">
+                <h3>Add Service</h3>
+            </div> 
+            <div class="mb-3 col-md-6">
+                Chose Service Images
+                <input type="file" name="home_service_image" value="" required  class="form-control">
+            </div>
+            <div class="mb-3 col-md-6">
+                Enter Image Heading
+                <input type="text" name="service_image_heading" value="" required  class="form-control">
+            </div>
+            <div class="mb-3 col-md-12 ml-5">
+                <button class="btn btn-primary">Save Service</button>
+            </div>
+        </div>
+    </div>
+</form><hr>
+
+
+
+
+<div class="container-fluid bg-white p-4">
+    <div class="row">
+        <div class="mb-3 col-md-12 text-center">
+          <h3>Service Images And Heading List</h3>
+        </div>
+        <div class="mb-3 col-md-12"> 
+
+            <table class="table table-bordered table-stripped table-hover">
+            <tr>
+                <th style="width: 15%;" >Action</th>
+                <th>Sr</th>
+                <th>Image Title</th>
+                <th>Images</th>
+            </tr>
+            <% for(var i=0;i<home_service_img.length;i++) { %>
+                <tr>
+                    <td>
+                        <a href="edit_home_service/<%-home_service_img[i].home_our_service_id%>" >
+                            <button class="btn btn-primary" onclick="alert('Are You Sure....?')">
+                                <i class="fa fa-edit"></i>
+                            </button>
+                        </a>
+                        <a href="delete_home_service/<%-home_service_img[i].home_our_service_id%>" >
+                            <button class="btn btn-danger" onclick="alert('Are You Sure....?')">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </a>
+                    </td>
+                    <td><%- i+1 %></td>
+                    <td><%-home_service_img[i].service_image_heading%></td>
+                    <td>
+                        <img src="/uploads/<%-home_service_img[i].home_service_image%>" style="height: 100px;width: 200px;">
+                    </td>
+
+                </tr>
+            <% } %>
+            
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<%- include("footer.ejs") %>

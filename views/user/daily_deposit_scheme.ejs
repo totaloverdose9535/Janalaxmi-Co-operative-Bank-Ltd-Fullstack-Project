@@ -1,0 +1,103 @@
+<%- include('navbar.ejs') %>
+
+    <div class="formoving">
+
+        <div class="container-fluid  p-0">
+            <div class="row ">
+                <div class="col-12 ">
+                    <div class="bus_sec_daily_depo" data-aos="fade-down" data-aos-duration="1000">
+
+
+                        <section class="blog_bread">
+                            <div class="container py-5 topbar">
+                                <div class="row py-5 ">
+                                    <h1 class="text-white text-center">Daily Deposite Information</h1>
+                                    <nav class="breadnav " aria-label="breadcrumb">
+                                        <ol class="breadcrumb bg-transparent  justify-content-center">
+                                            <li class="breadcrumb-item fs-5">
+                                                <a class="text-decoration-none text-white" href="/">Home</a>
+                                            </li>
+                                            <li class="breadcrumb-item fs-5">
+                                                <a class="text-decoration-none text-white" href="/deposit_scheme_page">Deposite Schmes</a>
+                                            </li>
+                                            <li class="breadcrumb-item fs-5 active text-warning" aria-current="page">
+                                                Daily Deposite
+                                            </li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </section>
+                        <!--contact breadcrumb end -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Slider End -->
+
+        <!-- {/* About Start */} -->
+        <!-- {/* content start */} -->
+        <div class="container p-4">
+            <div class="row up30">
+                <div class="col-md-12 ">
+                    <div class="wrapper-content bg-white">
+                        <div class="about-section pinside40">
+                            <div class="row" style="background-color: ButtonHighlight;">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h2 class="mb30" style="color: orange; margin-top: 40px; " data-aos="fade-up" data-aos-duration="1000">Daily Deposit </h2>
+                                    <p style="text-align: justify; font-weight: bold; font-size: 18px;">Drop by drop saves the pond</p>
+
+                                    <p style="text-align: justify;">is the motto of our campaign.</p>
+                                    <p style="text-align: justify;">The deposit scheme has been prepared accordingly.</p>
+                                    <p style="text-align: justify;">Money can be deposited into an account on daily basis. The amount may be as small as Rupees Ten. It can be called a Daily Deposit Scheme, as the money is deposited almost daily. The unique characteristic of this scheme
+                                        is that a Patpedhi's authorise agent collects the money daily, from the account holder's doorstep with mobile application and confirmation receipt by SMS to customers mobile.</p>
+                                    <p style="text-align: justify;">This scheme was introduced by Shivkrupa Patpedhi. The scheme was introduced to help daily wage earners, small traders and farmers to inculcate a saving habits and also as a means to fund their bigger capital requirements,
+                                        such as a wedding, home buying, vehicle purchase etc. The scheme is now offered by several other banks in India.</p>
+                                    <p style="text-align: justify;">They were treated as part and parcel of the banking and trading system often carrying legitimate and confidential market and trading information within the network and contributed to the development of money exchanges.
+                                        The banking system is not complete without recognising them as the pillars of funds deposit system, in Maharashtra; especially.</p>
+                                    <p style="text-align: justify;">The identity card holder representative of the organization will visit the account holder's home or place of business and deposit the amount and give them a receipt. It will also record the amount in the passbook.</p>
+                                    <p style="text-align: justify;">The account book will be checked by the office once in every three months.</p>
+                                    <p style="text-align: justify;"><strong>The authorized deposit collection representative holding the identity card</strong> is empowered to accept the amount of daily deposit by Agency Mobile APK.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row up30 mt-4">
+                <div class="col-md-12 mb-5">
+                    <table class="table table-bordered" style="height: auto;" width="100%">
+                        <tbody>
+                            <tr style="height: 34px;">
+                                <td style="width: 243.2px; height: 34px; text-align: center;"><strong>Duration</strong></td>
+                                <td style="width: 244.8px; height: 34px; text-align: center;"><strong>Interest Rate(P.A)(w.e.f-13-01-2024)</strong></td>
+                            </tr>
+
+
+                            <% for(var i=0;i<daily_deposit.length;i++) { %>
+                                <tr style="height: 34px;">
+                                    <td style="width: 243.2px; height: 34px; text-align: center;">
+                                        <%= daily_deposit[i].daily_deposit_duration %>
+                                    </td>
+                                    <td style="width: 244.8px; height: 34px; text-align: center;">
+                                        <%=daily_deposit[i].daily_deposit_intrest%><br></td>
+                                </tr>
+
+                                <% } %>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <br><br>
+
+    <%- include('footer.ejs') %>

@@ -1,0 +1,98 @@
+<%- include("navbar.ejs") %>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 p-0">
+                <div class="bus_sec_loan_Page" data-aos="fade-down" data-aos-duration="1000">
+                    <!-- Breadcrumb Section -->
+                    <section class="blog_bread">
+                        <div class="container py-5">
+                            <div class="row py-5">
+                                <div class="col-12 text-center">
+                                    <h1 class="text-white">Loan Services</h1>
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb justify-content-center bg-transparent">
+                                            <li class="breadcrumb-item fs-5">
+                                                <a class="text-white text-decoration-none" href="/">Home</a>
+                                            </li>
+                                            <li class="breadcrumb-item fs-5 text-warning active" aria-current="page">
+                                                Loan Schemes
+                                            </li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loan Types Section -->
+    <div class="container-fluid p-5 ">
+        <h2 class="text-center mb-5" data-aos="fade-up" data-aos-duration="1000">Types of Loans</h2>
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            <% for(var i=0; i<loan_details.length; i++) { %>
+                <div class="col-md-4">
+                    <div class="card h-100 cardloan shadow-sm">
+                        <img src="/uploads/<%= loan_details[i].loan_image%>" class="card-img-top" alt="<%= loan_details[i].loan_name%>" style="height: 200px; object-fit: cover;" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-center">
+                                <%= loan_details[i].loan_name%>
+                            </h5>
+                            <p class="card-text text-center flex-grow-1">
+                                <%= loan_details[i].loan_shortnote%>
+                            </p>
+                            <div class="text-center mt-auto">
+                                <a href="/loan_details/<%= loan_details[i].loan_type_id%>" class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+        </div>
+    </div>
+
+    <!-- Loan Information Table -->
+    <div class="container-fluid mb-5 p-5">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-center my-5" data-aos="fade-up" data-aos-duration="1000">About All Loan Info</h2>
+                <div class="table-responsive">
+                    <table class="table table-hover table-bordered border-dark">
+                        <thead class="table-light">
+                            <tr>
+                                <th scope="col">Sn</th>
+                                <th scope="col">Loan Type</th>
+                                <th scope="col">Time</th>
+                                <th scope="col">Interest Rate</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(var i=0; i<loan_details.length; i++) { %>
+                                <tr>
+                                    <td>
+                                        <%= i+1 %>
+                                    </td>
+                                    <td>
+                                        <%= loan_details[i].loan_name %>
+                                    </td>
+                                    <td>
+                                        <%= loan_details[i].loan_tenure %>
+                                    </td>
+                                    <td>
+                                        <%= loan_details[i].loan_intrest_rate %>
+                                    </td>
+                                </tr>
+                                <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <%- include("footer.ejs") %>

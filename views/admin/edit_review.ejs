@@ -1,0 +1,38 @@
+<%- include("navbar.ejs") %>
+
+<form action="/admin/update_happy_reviews/<%-review.customer_review_id%>" enctype="multipart/form-data" method="post">
+    <div class="container-fluid bg-white p-4">
+        <div class="row">
+            <div class="mb-3 col-md-12 col-sm-12 text-center">
+                <h3>Edit Happy Customer Review</h3>
+            </div>
+           
+            <div class="mb-4 col-md-6 col-sm-12">
+                Customer Name
+                <input type="text" class="form-control" name="customer_name" value="<%-review.customer_name%>" >
+            </div>
+            <div class="mb-4 col-md-3 col-sm-12">
+                Choose  Image
+                <input type="file" name="customer_image"  class="form-control" >
+            </div>
+            <div class="mb-4 col-md-3 col-sm-12">
+                <img src="/uploads/<%-review.customer_image%>" style="height: 100px;">
+            </div>
+            <div class="mb-4 col-md-6 col-sm-12">
+                Position
+                <input type="text" class="form-control" name="customer_position" value="<%-review.customer_position%>" >
+            </div>
+            <div class="mb-3 col-md-6 col-sm-12">
+                Description
+                <textarea name="about_description"  class="form-control" style="height: 50px;" >
+                <%-review.about_description%>
+                </textarea>
+            </div>
+            <div class="col-md-12 text-center">
+                <button class="btn btn-primary btn-lg">Save </button>
+            </div>
+        </div>
+    </div>
+</form><br><hr>
+
+<%- include("footer.ejs") %>

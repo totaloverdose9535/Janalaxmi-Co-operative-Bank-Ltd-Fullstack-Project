@@ -1,0 +1,41 @@
+<%- include("navbar.ejs") %>
+<form action="/admin/update_home_about_info/<%-edit_info.home_about_info_id%>" enctype="multipart/form-data" method="post">
+    <div class="container-fluid bg-white p-4">
+        <div class="row">
+            <div class="mb-3 col-md-12 text-center">
+                <h3>Edit About Us Details</h3>
+            </div>
+            <div class="mb-3 col-md-4">
+                Title
+                <input type="text" name="title" value="<%-edit_info.title%>"    class="form-control">
+            </div>
+            <div class="mb-3 col-md-8">
+                Title Heading
+                <input type="text" name="title_header" value="<%-edit_info.title_header%>"    class="form-control">
+            </div>
+            <div class="mb-3 col-md-6">
+                Title Detail
+                <textarea name="title_detail"     class="form-control" style="height: 150px;">
+                    <%-edit_info.title_detail%>
+                </textarea>
+            </div>
+            <div class="mb-3 col-md-3">
+                Title Image
+                <input type="file" name="title_image" value=""    class="form-control">
+            </div>
+            <div class="mb-3 col-md-3">
+                <img src="/uploads/<%-edit_info.title_image%>" style="height: 100px;width: 200px;">
+                
+            </div>
+
+            <div class="col-md-12 text-center">
+                <button class="btn btn-primary btn-lg">Save </button>
+            </div>
+        </div>
+    </div>
+</form>
+<br> <hr>
+
+
+
+<%- include("footer.ejs") %>

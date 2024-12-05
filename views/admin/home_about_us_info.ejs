@@ -1,0 +1,84 @@
+<%- include("navbar.ejs") %>
+<form action="/admin/save_home_about_info" enctype="multipart/form-data" method="post">
+    <div class="container-fluid bg-white p-4">
+        <div class="row">
+            <div class="mb-4 col-md-12 text-center">
+                <h3>About Us Details</h3>
+            </div>
+            <div class="mb-3 col-md-4">
+                Title
+                <input type="text" name="title" value="" required   class="form-control">
+            </div>
+            <div class="mb-3 col-md-8">
+                Title Heading
+                <input type="text" name="title_header" value="" required   class="form-control">
+            </div>
+            <div class="mb-3 col-md-6">
+                Title Detail
+                <textarea name="title_detail" value="" required   class="form-control" style="height: 150px;"></textarea>
+            </div>
+            <div class="mb-3 col-md-6">
+                Title Image
+                <input type="file" name="title_image" value="" required   class="form-control">
+            </div>
+            <div class="col-md-12 text-center">
+                <button class="btn btn-primary btn-lg">Save </button>
+            </div>
+        </div>
+    </div>
+</form>
+<br> <hr>
+
+<div class="container-fluid bg-white p-4">
+    <div class="row">
+        <div class="mb-3 col-md-12 text-center">
+          <h3>About Us Info</h3>
+        </div>
+        <div class="mb-3 col-md-12"> 
+
+            <table class="table table-bordered table-stripped table-hover">
+            <tr class="text-center">
+                <th  >Action</th>
+                <th >Sr</th>
+                <th >Title</th>
+                <th >Title Header</th>
+                <th >Title Detail</th>
+                <th >Title Image</th>
+                
+            </tr>
+            <% for(var i=0;i<home_about_info.length;i++) { %>
+                <tr class="text-center">
+                    <td>
+                        <a href="edit_home_about_info/<%-home_about_info[i].home_about_info_id%>" >
+                            <button class="btn btn-primary mb-3" onclick="alert('Are You Sure....?')">
+                                <i class="fa fa-edit"></i>
+                            </button>
+                        </a>
+                        <a href="delete_home_about_info/<%-home_about_info[i].home_about_info_id%>" >
+                            <button class="btn btn-danger" onclick="alert('Are You Sure....?')">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </a>
+                    </td>
+                    <td><%- i+1 %></td>
+                    <td><%-home_about_info[i].title%></td>
+                    <td><%-home_about_info[i].title_header%></td>
+                    <td><%-home_about_info[i].title_detail%></td>
+                    <td>
+                        <img src="/uploads/<%-home_about_info[i].title_image%>" style="height: 100px;width: 200px;">
+                    </td>
+                    
+
+                </tr>
+            <% } %>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<%- include("footer.ejs") %>

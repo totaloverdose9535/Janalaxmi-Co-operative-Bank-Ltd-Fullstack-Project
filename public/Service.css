@@ -1,0 +1,247 @@
+.bus_sec_services {
+    height: 350px;
+    background-image: url('https://img.freepik.com/premium-photo/human-showing-service-concept-business_220873-7592.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    width: 100;
+    z-index: 1;
+}
+
+.bus_sec_services::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.7);
+    height: 350px;
+}
+
+@media(max-width:680px) {
+    .bus_sec_services::before {
+        height: 100%;
+        width: 100%;
+    }
+    .service_section {
+        margin-left: -10px;
+    }
+}
+
+#service_section_h1 {
+    color: white;
+}
+
+.service_section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: black;
+}
+
+.service_section h1 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+}
+
+.service_section #service_section_a #service_section_h3 {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: black;
+}
+
+
+/* card  to s-card */
+
+.s-card {
+    max-width: 350px;
+    margin-left: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+    height: 480px;
+    overflow: hidden;
+}
+
+.s-card:hover {
+    transform: scale(1.02);
+}
+
+#services_img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 2px 3px 2px gray;
+}
+
+.s-card .service_section_h2 {
+    font-size: 22px;
+    color: #333;
+}
+
+.s-card .service_section_h6 {
+    font-size: 16px;
+    color: #555;
+}
+
+.btn {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 0;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+#LOCKER {
+    font-size: 25px;
+}
+
+
+/* Tablet View (768px and below) */
+
+@media (max-width: 768px) {
+    .service_section #service_section_h1 {
+        font-size: 2rem;
+    }
+    .service_section .service_section_h3 {
+        font-size: 1.4rem;
+    }
+    .s-card {
+        max-width: 95%;
+        padding: 15px;
+    }
+    #services_img {
+        height: 150px;
+    }
+}
+
+
+/* Mobile View (480px and below) */
+
+@media (max-width: 480px) {
+    .bus_sec_services {
+        height: 250px;
+    }
+    .service_section #service_section_h1 {
+        font-size: 1.6rem;
+    }
+    .service_section .service_section_h3 {
+        font-size: 1.1rem;
+    }
+    .s-card {
+        width: 100%;
+        padding: 31px;
+    }
+    .s-card .service_section_h3 {
+        font-size: 20px;
+    }
+    .s-card .service_section_h6 {
+        font-size: 14px;
+    }
+    #services_img {
+        height: 170px;
+    }
+    .btn {
+        font-size: 14px;
+        padding: 10px 0;
+    }
+    #button_sss {
+        margin-top: 60px;
+    }
+}
+
+
+/* buttons  */
+
+#button_services {
+    background-color: rgb(73, 73, 200);
+}
+
+#button_services:hover {
+    background-color: orange;
+}
+
+.banking_id {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 50px;
+    width: 50px;
+    background-color: rgb(73, 73, 200);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.banking_id:hover {
+    background-color: orange;
+}
+
+.modal-content12 {
+    max-width: 390px;
+    margin: auto;
+}
+
+.modal-header2 #modal_title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.fc2 {
+    margin-bottom: 10px;
+}
+
+#modal_textarea {
+    height: 100px;
+}
+
+#button_modal {
+    background-color: rgb(73, 73, 200);
+    border: none;
+    width: 35%;
+    color: white;
+    border-radius: 10px;
+}
+
+#button_modal:hover {
+    background-color: orange;
+}
+
+
+/*Screen Modal Click change color*/
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1040;
+    display: none;
+}
+
+@media(max-width:680px) {
+    .modal-content12 {
+        margin-left: 43px;
+    }
+}
+
+
+/* footer part  */

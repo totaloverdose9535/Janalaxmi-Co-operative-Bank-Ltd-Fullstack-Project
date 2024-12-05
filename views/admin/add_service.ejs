@@ -1,0 +1,82 @@
+<%- include("navbar.ejs") %>
+
+
+<form action="/admin/save_service" enctype="multipart/form-data" method="post">
+    <div class="container-fluid bg-white p-4">
+        <div class="row">
+            <div class="mb-3 col-md-12 text-center">
+                <h3>Add Service </h3>
+            </div>
+            <div class="mb-3 col-md-6">
+                Choose Service Image
+                <input type="file" name="service_image" value="" required  class="form-control">
+            </div>
+            <div class="mb-3 col-md-6">
+                Service Title
+                <input type="text" name="service_title" value="" required class="form-control">
+            </div>
+            <div class="mb-3 col-md-6">
+                Service Description
+                <input type="text" name="service_description" value="" required class="form-control">
+            </div>
+            <div class="mb-3 col-md-6">
+                Service Icon
+                <input type="text" name="service_icon" value="" required class="form-control">
+            </div>
+            
+            <div class="mb-3 col-md-12 ml-5">
+                <button class="btn btn-primary">Save Details</button>
+            </div>
+        </div>
+    </div>
+</form><hr>
+
+
+<div class="container-fluid bg-white p-4">
+    <div class="row">
+        <div class="mb-3 col-md-12 text-center">
+          <h3>Service List</h3>
+        </div>
+        <div class="mb-3 col-md-12"> 
+
+            <table class="table table-bordered table-stripped table-hover">
+            <tr>
+                <th style="width: 15%;" >Action</th>
+                <th>Sr</th>
+                <th>Service Title</th>
+                <th>Service Description</th>
+                <th>Service Icon</th>
+                <th>Service Image</th>
+            </tr>
+            <% for(var i=0;i<services.length;i++) { %>
+                <tr>
+                    <td>
+                        <a href="edit_service/<%-services[i].service_id%>" >
+                            <button class="btn btn-primary" onclick="alert('Are You Sure....?')">
+                                <i class="fa fa-edit"></i>
+                            </button>
+                        </a>
+                        <a href="delete_service/<%-services[i].service_id%>" >
+                            <button class="btn btn-danger" onclick="alert('Are You Sure....?')">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </a>
+                    </td>
+                    <td><%- i+1 %></td>
+                    <td><%-services[i].service_title%></td>
+                    <td><%-services[i].service_description%></td>
+                    <td><%-services[i].service_icon%></td>
+                    <td>
+                        <img src="/uploads/<%-services[i].service_image%>" style="height: 100px;width: 200px;">
+                    </td>
+
+                </tr>
+            <% } %>
+            
+            </table>
+        </div>
+    </div>
+</div>
+ 
+
+<%- include("footer.ejs") %>

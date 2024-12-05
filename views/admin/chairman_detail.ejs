@@ -1,0 +1,33 @@
+<%- include("navbar.ejs") %>
+
+
+<form action="/admin/save_chairman_details" enctype="multipart/form-data" method="post">
+    <div class="container-fluid bg-white p-4">
+        <div class="row">
+            <div class="mb-3 col-md-12 text-center">
+                <h3>Chairman Details</h3>
+            </div>
+            <div class="mb-3 col-md-6">
+                Chairman Name
+                <input type="text" name="chairman_name" value="<%-chairman_info.chairman_name%>"   class="form-control">
+            </div>
+            <div class="mb-3 col-md-6">
+                Chairman Info
+                <input type="text" name="chairman_info" value="<%-chairman_info.chairman_info%>"   class="form-control">
+            </div>
+            <div class="mb-5 col-md-12 col-sm-12">
+                Chairman Description
+                <textarea name="chairman_description" class="form-control" style="height: 150px;">
+                    <%-chairman_info.chairman_description%>
+                </textarea>
+              
+            </div>
+            <div class="mb-3 col-md-12 ml-5 text-center">
+                <button class="btn btn-primary">Save Details</button>
+            </div>
+        </div>
+    </div>
+</form><hr>
+
+
+<%- include("footer.ejs") %>

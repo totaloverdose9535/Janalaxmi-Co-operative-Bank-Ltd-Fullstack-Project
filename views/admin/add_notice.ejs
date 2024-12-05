@@ -1,0 +1,71 @@
+<%- include("navbar.ejs") %>
+
+
+<form action="/admin/save_notice" enctype="multipart/form-data" method="post">
+    <div class="container-fluid bg-white p-4">
+        <div class="row">
+            <div class="mb-3 col-md-12 text-center">
+                <h3>Add Notice </h3>
+            </div>
+            <div class="mb-3 col-md-6">
+                Choose Notice Image
+                <input type="file" name="notice_image" value="" required  class="form-control">
+            </div>
+            
+            
+            <div class="mb-3 col-md-12 ml-5 text-center">
+                <button class="btn btn-primary">Save Image</button>
+            </div>
+        </div>
+    </div>
+</form><hr>
+
+
+<div class="container-fluid bg-white p-4">
+    <div class="row">
+        <div class="mb-3 col-md-12 text-center">
+          <h3>Notice List</h3>
+        </div>
+        <div class="mb-3 col-md-12"> 
+
+            <table class="table table-bordered table-stripped table-hover">
+            <tr>
+                <th style="width: 15%;" >Action</th>
+                <th>Sr</th>
+                <th>Notice Image</th>
+            </tr>
+            <% for(var i=0;i<notices.length;i++) { %>
+                <tr>
+                    <td>
+                        <a href="view_notice/<%-notices[i].notice_image_id%>" >
+                            <button class="btn btn-primary" onclick="alert('Are You Sure....?')">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+                        </a>
+                        <a href="edit_notice/<%-notices[i].notice_image_id%>" >
+                            <button class="btn btn-primary" onclick="alert('Are You Sure....?')">
+                                <i class="fa fa-edit"></i>
+                            </button>
+                        </a>
+                        <a href="delete_notice/<%-notices[i].notice_image_id%>" >
+                            <button class="btn btn-danger" onclick="alert('Are You Sure....?')">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </a>
+                    </td>
+                    <td><%- i+1 %></td>
+                    
+                    <td>
+                        <img src="/uploads/<%-notices[i].notice_image%>" style="height: 100px;width: 200px;">
+                    </td>
+
+                </tr>
+            <% } %>
+            
+            </table>
+        </div>
+    </div>
+</div>
+ 
+
+<%- include("footer.ejs") %>

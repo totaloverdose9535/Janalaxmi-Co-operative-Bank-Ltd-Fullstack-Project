@@ -1,0 +1,388 @@
+             /* Importing Google font -Open+Sans */
+             
+             @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+             * {
+                 margin: 0;
+                 padding: 0;
+                 box-sizing: border-box;
+                 font-family: 'Open Sans', sans-serif;
+             }
+             
+             .container {
+                 width: 460px;
+                 padding: 40px;
+                 /* background: #ffffff; */
+                 text-align: center;
+                 border-radius: 12px;
+                 overflow: hidden;
+                 box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+                 position: relative;
+             }
+             
+             .container .title {
+                 font-size: 2rem;
+                 color: #333;
+             }
+             
+             .container .price {
+                 color: #FF6B6B;
+                 font-weight: 700;
+                 font-size: 2.2rem;
+                 margin: 15px 0;
+             }
+             
+             .container span {
+                 font-size: 1.2rem;
+             }
+             
+             .container .description {
+                 color: #3b3b3b;
+                 font-size: 1.1rem;
+                 margin: 20px 0 20px;
+             }
+             
+             .container .offer {
+                 display: block;
+                 color: #555;
+                 font-size: 1rem;
+                 margin-top: 25px;
+             }
+             
+             .subscribe-button {
+                 display: inline-block;
+                 padding: 10px 0;
+                 background-color: #FF6B6B;
+                 color: #fff;
+                 text-decoration: none;
+                 border-radius: 30px;
+                 font-size: 1.2rem;
+                 margin-top: 40px;
+                 width: 60%;
+                 font-weight: 500;
+                 transition: 0.2s ease;
+             }
+             
+             .subscribe-button:hover {
+                 background: #ff4d4d;
+             }
+             
+             .ribbon-wrap {
+                 width: 150px;
+                 height: 150px;
+                 position: absolute;
+                 top: -10px;
+                 left: -10px;
+                 pointer-events: none;
+             }
+             
+             .ribbon {
+                 width: 200px;
+                 font-size: 0.918rem;
+                 text-align: center;
+                 padding: 8px 0;
+                 background: #FF6B6B;
+                 color: #fff;
+                 position: absolute;
+                 transform: rotate(-45deg);
+                 right: -17px;
+                 top: 29%;
+             }
+             
+             */
+             /*Slider Css*/
+             /* Google Fonts - Poppins */
+             /* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"); */
+             
+             * {
+                 margin: 0;
+                 padding: 0;
+                 box-sizing: border-box;
+                 font-family: "Poppins", sans-serif;
+             }
+             
+             .main {
+                 height: 100vh;
+                 width: 100%;
+             }
+             
+             .wrapper,
+             .slide {
+                 position: relative;
+                 width: 100%;
+                 height: 100%;
+             }
+             
+             .slide {
+                 overflow: hidden;
+             }
+             
+             .slide::before {
+                 content: "";
+                 position: absolute;
+                 height: 100%;
+                 width: 100%;
+                 background-color: rgba(0, 0, 0, 0.4);
+                 z-index: 10;
+             }
+             
+             .slide .image {
+                 height: 100%;
+                 width: 100%;
+                 object-fit: cover;
+             }
+             
+             .slide .image-data {
+                 position: absolute;
+                 top: 50%;
+                 left: 50%;
+                 transform: translate(-50%, -50%);
+                 text-align: center;
+                 width: 100%;
+                 z-index: 100;
+             }
+             
+             .image-data span.text {
+                 font-size: 14px;
+                 font-weight: 400;
+                 color: #fff;
+             }
+             
+             .image-data h2 {
+                 font-size: 45px;
+                 font-weight: 600;
+                 color: #fff;
+             }
+             
+             a.button {
+                 display: inline-block;
+                 padding: 10px 20px;
+                 border-radius: 25px;
+                 color: #333;
+                 background: #fff;
+                 text-decoration: none;
+                 margin-top: 25px;
+                 transition: all 0.3s ease;
+             }
+             
+             a.button:hover {
+                 color: #fff;
+                 background-color: #c87e4f;
+             }
+             /* swiper button css */
+             
+             .nav-btn {
+                 height: 50px;
+                 width: 50px;
+                 border-radius: 50%;
+                 background: rgba(255, 255, 255, 0.3);
+             }
+             
+             .nav-btn:hover {
+                 background: rgba(255, 255, 255, 0.4);
+             }
+             
+             .swiper-button-next {
+                 right: 50px;
+             }
+             
+             .swiper-button-prev {
+                 left: 50px;
+             }
+             
+             .nav-btn::before,
+             .nav-btn::after {
+                 font-size: 25px;
+                 color: #fff;
+             }
+             
+             .swiper-pagination-bullet {
+                 opacity: 1;
+                 height: 12px;
+                 width: 12px;
+                 background-color: #fff;
+                 visibility: hidden;
+             }
+             
+             .swiper-pagination-bullet-active {
+                 border: 2px solid #fff;
+                 background-color: #c87e4f;
+             }
+             
+             @media screen and (max-width: 768px) {
+                 .nav-btn {
+                     visibility: hidden;
+                 }
+                 .swiper-pagination-bullet {
+                     visibility: visible;
+                 }
+             }
+             /*Card Css*/
+             /* Importing Google font - Open Sans */
+             
+             @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+             * {
+                 margin: 0;
+                 padding: 0;
+                 box-sizing: border-box;
+                 font-family: 'Open Sans', sans-serif;
+             }
+             
+             body {
+                 background: #ecececdb;
+             }
+             
+             .card-list {
+                 display: grid;
+                 grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                 max-width: 1250px;
+                 margin: 150px auto;
+                 padding: 20px;
+                 gap: 20px;
+             }
+             
+             .card-list .card-item {
+                 background: #fff;
+                 padding: 26px;
+                 border-radius: 8px;
+                 box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.04);
+                 list-style: none;
+                 cursor: pointer;
+                 text-decoration: none;
+                 border: 2px solid transparent;
+                 transition: border 0.5s ease;
+             }
+             
+             .card-list .card-item:hover {
+                 border: 2px solid #000;
+             }
+             
+             .card-list .card-item img {
+                 width: 100%;
+                 aspect-ratio: 16/9;
+                 border-radius: 8px;
+                 object-fit: cover;
+             }
+             
+             .card-list span {
+                 display: inline-block;
+                 background: #F7DFF5;
+                 margin-top: 32px;
+                 padding: 8px 15px;
+                 font-size: 0.75rem;
+                 border-radius: 50px;
+                 font-weight: 600;
+             }
+             
+             .card-list .developer {
+                 background-color: #F7DFF5;
+                 color: #B22485;
+             }
+             
+             .card-list .designer {
+                 background-color: #d1e8ff;
+                 color: #2968a8;
+             }
+             
+             .card-list .editor {
+                 background-color: #d6f8d6;
+                 color: #205c20;
+             }
+             
+             .card-item h3 {
+                 color: #000;
+                 font-size: 1.438rem;
+                 margin-top: 28px;
+                 font-weight: 600;
+             }
+             
+             .card-item .arrow {
+                 display: flex;
+                 align-items: center;
+                 justify-content: center;
+                 transform: rotate(-35deg);
+                 height: 40px;
+                 width: 40px;
+                 color: #000;
+                 border: 1px solid #000;
+                 border-radius: 50%;
+                 margin-top: 40px;
+                 transition: 0.2s ease;
+             }
+             
+             .card-list .card-item:hover .arrow {
+                 background: #000;
+                 color: #fff;
+             }
+             
+             @media (max-width: 1200px) {
+                 .card-list .card-item {
+                     padding: 15px;
+                 }
+             }
+             
+             @media screen and (max-width: 980px) {
+                 .card-list {
+                     margin: 0 auto;
+                 }
+             }
+             /*Second Card Start*/
+             
+             .Pricing_text {
+                 color: #e74c14;
+                 text-transform: uppercase;
+                 text-align: center;
+                 margin-top: 20px;
+                 font-weight: bold;
+             }
+             
+             .Pricing_text1 {
+                 text-transform: uppercase;
+                 text-align: center;
+                 /*  margin-top: 20px;*/
+             }
+             
+             .card_pricing {
+                 background-color: #dddddd;
+             }
+             
+             .Pricing_text2 {
+                 text-align: center;
+             }
+             
+             .button_pricing {
+                 margin-left: 50px;
+             }
+             
+             .card_body_1 {
+                 background-color: black;
+             }
+             
+             .button_pricing1 {
+                 margin-left: 80px;
+             }
+             
+             .same_fun_icon {
+                 font-size: 50px;
+                 margin-left: 100px;
+                 color: #e74c14;
+             }
+             
+             .slider_img {
+                 border-radius: 50px;
+                 position: absolute;
+                 top: 100px;
+             }
+             
+             .slider {
+                 .text_jpg {
+                     color: #e74c14;
+                     margin-top: 20px;
+                 }
+                 .Questions_1 {
+                     font-size: 10px;
+                 }
+                 .contact {
+                     background-color: red;
+                 }
+             }
+             /*Second Card ENd*/

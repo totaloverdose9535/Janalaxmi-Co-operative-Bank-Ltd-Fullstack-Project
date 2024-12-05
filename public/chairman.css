@@ -1,0 +1,498 @@
+/* navbar end  */
+
+.bus_sec_chairman {
+    height: 350px;
+    background-image: url('https://www.pbmares.com/wp-content/uploads/2016/12/Succession-Plan.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    width: 100;
+    z-index: 1;
+}
+
+.bus_sec_chairman::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.7);
+    height: 350px;
+}
+
+@media (max-width:768px) {
+    .bus_sec_chairman::before {
+        height: 100%;
+        background-size: cover;
+    }
+    .breadcrumb {
+        margin-left: -10px;
+    }
+}
+
+
+/* bread crunmb */
+
+.breadnav {
+    --bs-breadcrumb-divider: ">";
+}
+
+.breadnav .breadcrumb-item+.breadcrumb-item::before {
+    color: white;
+}
+
+.ourpartners {
+    border-radius: 15px;
+    box-shadow: #000;
+    background-color: #0d2b40;
+    /* Purple background */
+    color: white;
+    /* Text color */
+}
+
+.ourpartners img {
+    width: 100%;
+    height: auto;
+}
+
+.history_para {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.aboutcard {
+    margin: 20px;
+}
+
+.aboutcard:hover {
+    transform: translateY(5px);
+    transition: 0.5s all;
+    /* background: linear-gradient(to bottom, rgba(0,176,155,0.5), rgba(150,201,61,1)); */
+}
+
+.imgp {
+    height: 200px;
+    width: 300px;
+}
+
+.aboutcard:hover:before {
+    opacity: 1;
+}
+
+.vis {
+    font-size: 40px;
+    text-shadow: #0c6769;
+}
+
+.visionimg {
+    height: 300px;
+    width: 400px;
+    margin-left: 20px;
+}
+
+.vision_text {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    margin-top: 40px;
+}
+
+.aboutimg {
+    height: 400px;
+    width: 450px;
+    box-shadow: 20px 20px 20px rgba(0.5, 0.5, 0.5, 0.5);
+    z-index: 10;
+    margin-top: 70px;
+    margin-right: 40px;
+}
+
+.aboutinfo h2 {
+    color: #000;
+}
+
+.About {
+    background-color: white;
+}
+
+.about_box {
+    margin: 2px;
+}
+
+.section-heading-border {
+    position: relative;
+    height: 5px;
+    width: 30px;
+    margin: auto;
+    background: #01257D;
+    border-radius: 10px;
+    display: block;
+}
+
+.section-heading-border::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 50%;
+    background: #01257D;
+    border-radius: 10px;
+    right: -60%;
+    top: 0;
+}
+
+.section-heading-border::after {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 25%;
+    background: #01257D;
+    border-radius: 10px;
+    right: -100%;
+    top: 0;
+}
+
+.cardfirst {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGlEWE0nn-504j3sGc9GkQzWk0JEJWgvHD2A&s");
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 20px 20px 20px rgba(202, 233, 243, 0.5);
+}
+
+.touchcard {
+    /* box-shadow:5px 1px 10px 1px rgba(242, 145, 10, 0.756); */
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    border: solid 0.10px white;
+    margin-left: 10px;
+    border-radius: 8px;
+    align-content: center;
+}
+
+.touchcard1 {
+    text-align: center;
+}
+
+.custom-card {
+    border-radius: 15px;
+    box-shadow: #000000;
+    background-color: #3b2ab8;
+    /* Purple background */
+    color: white;
+    /* Text color */
+}
+
+.custom-card img {
+    width: 100%;
+    height: auto;
+}
+
+.vision {
+    background-color: #6610f2;
+    color: white;
+}
+
+.branchimg1 {
+    height: 250px;
+    width: 80%;
+    box-shadow: 20px 20px 20px rgba(0.5, 0.5, 0.5, 0.5);
+}
+
+.touch i {
+    font-size: 70px;
+    color: rgb(28, 27, 89);
+    text-align: center;
+    margin-top: 10%;
+}
+
+.mis {
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.missionimg {
+    margin-top: 20px;
+    margin-left: 80px;
+    height: 250px;
+    width: 350px;
+}
+
+span {
+    text-align: center;
+}
+
+.team {
+    margin-left: 50px;
+}
+
+.social li {
+    display: inline-block;
+    color: orangered;
+    margin-left: 10px;
+}
+
+
+/* sant */
+
+body {
+    background: #f9f9f9;
+    font-size: 16px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.text-color {
+    color: #818385;
+}
+
+.bg-cover {
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.overlay::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.6;
+}
+
+.overlay {
+    position: relative;
+    padding-top: 130px;
+    padding-bottom: 130px;
+}
+
+
+/* chat */
+
+blog-section {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.blog-image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.blog-image-post {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    margin-top: 20px;
+    padding-left: 0.5%;
+    width: 320px;
+    margin-left: 20px;
+}
+
+.blog-image-post img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.blog-image-post:hover img {
+    transform: scale(1.1);
+}
+
+.customer {
+    background-image: url(./images/thankyou.jpeg);
+    background-size: 100%;
+    height: 450px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.happy_customer {
+    background-color: rgba(0.5, 0, 0, 0.5);
+    height: 450px;
+}
+
+.team div {
+    height: 400px;
+    width: 100%;
+    background-size: 100% 100%;
+}
+
+.class_cc {
+    height: 400px !important;
+    width: 100% !important;
+    margin-top: 80px;
+}
+
+.class_cc img {
+    height: 100%;
+    width: 100%;
+}
+
+.chairman {
+    margin-top: 20px;
+}
+
+.chairman div {
+    border: none;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+#modalImage {
+    margin-top: -25px;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+@media (max-width:680px) {
+    #modalImage {
+        height: 500px;
+        width: 100%;
+        object-fit: fill;
+    }
+}
+
+.breadcrumb {
+    color: #f9f9f9;
+}
+
+.chairman_para {
+    text-align: left!important;
+}
+
+.chairman img {
+    height: 200px;
+}
+
+@media(max-width:680px) {
+    .chairman img {
+        height: 300px;
+        width: 100%;
+    }
+}
+
+.partner1:hover:before {
+    transform: translateY(20px);
+    transition: 0.5s all;
+}
+
+
+/* carousel */
+
+.btn-close {
+    margin-left: 420px;
+    font-size: 40px;
+}
+
+.card_wid {
+    width: 20rem;
+    margin-top: 50px;
+}
+
+.team_mem {
+    height: 150px;
+    width: 200px !important;
+}
+
+.team_mem img {
+    object-fit: cover;
+    margin-left: 65PX;
+    height: 150px;
+    width: 150px !important;
+    border-radius: 50%;
+}
+
+.team_social {
+    display: inline-flex;
+    font-size: 20px;
+    list-style: none;
+    color: orangered;
+    margin-top: 15px;
+}
+
+.team_social li {
+    margin-left: 10px;
+}
+
+.team_social li i:hover {
+    opacity: 70%;
+    font-size: 20px;
+}
+
+.item-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* height: 200px; */
+}
+
+.item-home p span {
+    font-size: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.item-home p span {
+    font-size: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.our_team {
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.team_img {
+    border-radius: 50%;
+    height: 200px !important;
+    width: 200px !important;
+    position: relative;
+    left: 50px;
+    top: -60px;
+    object-fit: cover;
+}
+
+.myso {
+    font-size: 40px;
+    color: blue;
+}
+
+
+/* gallery */
+
+.gallerymodal-content {
+    background: none;
+    /* Removes background color */
+    border: none;
+    /* Removes any border */
+    padding: 0;
+    /* Removes padding */
+}
+
+.modal-body {
+    padding: 0;
+    /* Removes padding around the image */
+}
+
+.modal-dialog {
+    max-width: fit-content;
+    /* Ensures the modal only fits the image size */
+    margin: auto;
+}
+
+.gallerymodal-content img {
+    display: block;
+    width: 100%;
+    border: 2px solid white;
+    /* Ensures the image fits perfectly in the modal */
+}

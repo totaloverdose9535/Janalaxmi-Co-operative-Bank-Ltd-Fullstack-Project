@@ -1,0 +1,174 @@
+<%- include('navbar.ejs') %>
+
+    <div class="formoving">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <img src="https://img.freepik.com/free-vector/tiny-people-sitting-standing-near-giant-faq_74855-7879.jpg" data-aos="fade-down" data-aos-duration="1000" alt="">
+
+                    <h2 class="fs-1" data-aos="fade-up" data-aos-duration="1000">Do You Have Any Question ?</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid  faqs  p-0">
+            <div class="row">
+                <div class="col-12">
+                    <div class="container faqs12">
+                        <div class="row">
+                            <div class="col-12 mt-5 mb-5">
+                                <div class="accordion" id="accordionExample">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <p>1) <%= faq_question[0].faq_question %></p>
+                                    </button>
+                                        </h2>
+                                        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <ul>
+                                                    <% for(var i=0;i<faq_answer1.length;i++) {%>
+                                                        <li>
+                                                            <%= faq_answer1[i].faq_answer%>
+                                                        </li>
+                                                        <%}%>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        <p>2) <%= faq_question[1].faq_question %></p>
+                                    </button>
+                                        </h2>
+                                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <ul>
+                                                    <% for(var i=0;i<faq_answer2.length;i++) {%>
+                                                        <li>
+                                                            <%= faq_answer2[i].faq_answer%>
+                                                        </li>
+                                                        <%}%>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        <p>3) <%= faq_question[2].faq_question %></p>
+                                    </button>
+                                        </h2>
+                                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <ul>
+                                                    <% for(var i=0;i<faq_answer3.length;i++) {%>
+                                                        <li>
+                                                            <%= faq_answer3[i].faq_answer%>
+                                                        </li>
+                                                        <%}%>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        <p>4)  <%= faq_question[3].faq_question %></p>
+                                    </button>
+                                        </h2>
+                                        <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <ul>
+                                                    <% for(var i=0;i<faq_answer4.length;i++) {%>
+                                                        <li>
+                                                            <%= faq_answer4[i].faq_answer%>
+                                                        </li>
+                                                        <%}%>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                        <p>5)  <%= faq_question[4].faq_question %></p>
+                                    </button>
+                                        </h2>
+                                        <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <ul>
+                                                    <% for(var i=0;i<faq_answer5.length;i++) {%>
+                                                        <li>
+                                                            <%= faq_answer5[i].faq_answer%>
+                                                        </li>
+                                                        <%}%>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                        <p>6)  <%= faq_question[5].faq_question %></p>
+                                    </button>
+                                        </h2>
+                                        <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <ul>
+                                                    <% for(var i=0;i<faq_answer6.length;i++) {%>
+                                                        <li>
+                                                            <%= faq_answer6[i].faq_answer%>
+                                                        </li>
+                                                        <%}%>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                        <p>7)  <%= faq_question[6].faq_question %>
+                                        </p>
+                                    </button>
+                                        </h2>
+                                        <div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <% for(var i=0;i<faq_answer7.length;i++) {%>
+                                                    <li>
+                                                        <%= faq_answer7[i].faq_answer%>
+                                                    </li>
+                                                    <%}%>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                        <p>8)  <%= faq_question[7].faq_question %></p>
+                                    </button>
+                                        </h2>
+                                        <div id="collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <ul>
+                                                    <% for(var i=0;i<faq_answer8.length;i++) {%>
+                                                        <li>
+                                                            <%= faq_answer8[i].faq_answer%>
+                                                        </li>
+                                                        <%}%>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <%- include('footer.ejs') %>

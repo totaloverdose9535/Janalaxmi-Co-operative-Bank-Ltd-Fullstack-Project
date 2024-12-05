@@ -1,0 +1,97 @@
+/* Google Fonts - Poppins */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.main {
+    height: 100vh;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-btn {
+        visibility: hidden;
+    }
+    .swiper-pagination-bullet {
+        visibility: visible;
+    }
+}
+
+
+/* SLider Start */
+
+.bus_sec_daily_depo {
+    height: 350px;
+    background-image: url('https://www.vyavsayikbank.com/images/b9.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    width: 100;
+    z-index: 1;
+}
+
+.bus_sec_daily_depo::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.7);
+    height: 350px;
+}
+
+@media (max-width:768px) {
+    .bus_sec_daily_depo::before {
+        height: 100%;
+    }
+}
+
+
+/* bread crunmb */
+
+.breadnav {
+    --bs-breadcrumb-divider: ">";
+}
+
+.breadnav .breadcrumb-item+.breadcrumb-item::before {
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-btn {
+        visibility: hidden;
+    }
+    .swiper-pagination-bullet {
+        visibility: visible;
+    }
+}
+
+.main {
+    height: 100vh;
+    width: 100%;
+}
+
+.formoving {
+    overflow-x: hidden;
+}
+
+
+/* Slider Start */
+
+.breadcrumb-bg {
+    height: 300px;
+    background-repeat: no-repeat;
+    width: 102.4%;
+    background-image: url(./img/hero_1.jpg);
+}
+
+.breadcrumb {
+    background: none;
+}

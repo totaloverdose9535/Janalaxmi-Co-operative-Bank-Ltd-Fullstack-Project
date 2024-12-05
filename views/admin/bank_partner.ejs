@@ -1,0 +1,58 @@
+<%- include("navbar.ejs") %>
+<form action="/admin/save_bank_image" enctype="multipart/form-data" method="post">
+    <div class="container-fluid bg-white p-4">
+        <div class="row">
+            <div class="mb-3 col-md-12 col-sm-12 text-center">
+                <h3> Add Bank Partner Image</h3>
+            </div>
+            <div class="mb-3 col-md-2 col-sm-12">
+                
+            </div>
+            <div class="mb-3 col-md-7 col-sm-12">
+                Choose Bank Image
+                <input type="file" name="bank_partner_image" required class="form-control">
+            </div>
+           
+            <div class="col-md-12 text-center">
+                <button class="btn btn-primary btn-lg">Save </button>
+            </div>
+        </div>
+    </div>
+</form><br><hr>
+
+
+<div class="container-fluid bg-white p-4">
+    <div class="row">
+        <div class="mb-3 col-md-12 text-center">
+          <h3>Bank Images</h3>
+        </div>
+        <div class="mb-3 col-md-12"> 
+
+            <table class="table table-bordered table-stripped table-hover">
+            <tr>
+                <th style="width: 10%;margin-left: 30px;" >Action</th>
+                <th>Sr</th>
+                <th>Bank Images</th>
+            </tr>
+            <% for(var i=0;i<bank_partner.length;i++) { %>
+                <tr>
+                    <td>
+                        <a href="/admin/delete_bank_image/<%-bank_partner[i].bank_partner_image_id%>" >
+                            <button class="btn btn-danger" onclick="alert('Are You Sure....?')">Delete</button>
+                        </a>
+                    </td>
+                    <td><%- i+1 %></td>
+                    <td>
+                        <img src="/uploads/<%-bank_partner[i].bank_partner_image%>" style="height: 100px;width: 200px;">
+                    </td>
+
+                </tr>
+            <% } %>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+<%- include("footer.ejs") %>

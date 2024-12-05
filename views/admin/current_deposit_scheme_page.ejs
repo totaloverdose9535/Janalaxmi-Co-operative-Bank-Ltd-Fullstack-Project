@@ -1,0 +1,164 @@
+<%- include('navbar.ejs') %>
+
+
+<!--current card form  -->
+<form action="/admin/save_current_deposit_scheme_card" method="post" enctype="multipart/form-data">
+    <div class="container-fluid bg-white p-4">
+        <div class="row">
+            <div class="mb-3 col-md-12 text-center">
+                <h3>Add Current Deposit Schemes Card</h3>
+            </div>
+            
+            <div class="mb-3 col-12">
+                Card Image
+                <input type="file" name="current_card_image" class="form-control pb-5" accept="image/*">
+            </div>
+    
+            <div class="mb-3 col-12">
+                Enter Card Details
+                <textarea name="current_card_details" class="form-control"></textarea>
+            </div>
+    
+            <div class="mb-3 col-12 text-center">
+                <button class="btn btn-primary">Save Card</button>
+            </div>
+        </div>
+    </div>
+    </form>
+
+
+    <!-- current card table  -->
+    <br><br>
+    <div class="container-fluid bg-white p-4">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3>Current Deposit Scheme Cards</h3>
+                <br>
+            </div>
+            <div class="col-md-12">
+                <table class="table table-sm table-bordered">
+                    <tr>
+                        <th>Action</th>
+                        <th>SN</th>
+                        <th>Details</th>
+                        <th>Image</th>
+                    </tr>
+                    <% for(i=0;i<current_deposit_card.length;i++) { %>
+    
+                        <tr>
+                            <td style="white-space: nowrap;">
+                                <a href="/admin/delete_current_deposit_card/<%- current_deposit_card[i].current_card_id %>">
+                                    <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                                </a>  
+                            </td>
+                            <td><%-i+1%></td>
+                            <td><%-current_deposit_card[i].current_card_details%></td>
+                            <td><img src="/uploads/<%-current_deposit_card[i].current_card_image%>" width="100px"></td>
+    
+                        </tr>
+                    <% } %>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- current deposit documents form  -->
+    <br><br>
+    <form action="/admin/save_current_deposit_scheme_docs" method="post" enctype="multipart/form-data">
+        <div class="container-fluid bg-white p-4">
+            <div class="row">
+                <div class="mb-3 col-md-12">
+                    <h3>Add Current Deposit Schemes Documents</h3>
+                </div>
+        
+                <div class="mb-3 col-12">
+                    Enter Documents Needed
+                    <input type="text" name="current_deposit_docs" class="form-control">
+                </div>
+        
+                <div class="mb-3 col-12 text-center">
+                    <button class="btn btn-primary">Save Document</button>
+                </div>
+            </div>
+        </div>
+        </form>
+
+
+    <!-- current deposit documents Table  -->
+
+        <br><br>
+        <div class="container-fluid bg-white p-4">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Current Deposit Scheme Cards</h3>
+                    <br>
+                </div>
+                <div class="col-md-12">
+                    <table class="table table-sm table-bordered">
+                        <tr>
+                            <th>Action</th>
+                            <th>SN</th>
+                            <th>Details</th>
+                        </tr>
+                        <% for(i=0;i<current_deposit_docs.length;i++) { %>
+        
+                            <tr>
+                                <td style="white-space: nowrap;">
+                                    <a href="/admin/delete_current_deposit_docs/<%- current_deposit_docs[i].current_docs_id %>">
+                                        <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                                    </a>  
+                                </td>
+                                <td><%-i+1%></td>
+                                <td><%-current_deposit_docs[i].current_deposit_docs%></td>
+        
+                            </tr>
+                        <% } %>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+<!-- current deposit scheme enquiry table-->
+<br><br>
+<div class="container-fluid bg-white p-4">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Current Deposit Scheme Enquiry</h3>
+            <br>
+        </div>
+        <div class="col-md-12">
+            <table class="table table-sm table-bordered">
+                <tr>
+                    <th>Action</th>
+                    <th>SN</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Mobile No</th>
+                    <th>City</th>
+                    <th>Message</th>
+
+                </tr>
+                <% for(i=0;i<current_deposit_enquiry.length;i++) { %>
+
+                    <tr>
+                        <td style="white-space: nowrap;">
+                            <a href="/admin/delete_current_deposit_enquiry/<%- current_deposit_enquiry[i].current_deposit_enquiry_id %>">
+                                <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                            </a>  
+                        </td>
+                        <td><%-i+1%></td>
+                        <td><%-current_deposit_enquiry[i].current_enquiry_name%></td>
+                        <td><%-current_deposit_enquiry[i].current_enquiry_email%></td>
+                        <td><%-current_deposit_enquiry[i].current_enquiry_mobile%></td>
+                        <td><%-current_deposit_enquiry[i].current_enquiry_city%></td>
+                        <td><%-current_deposit_enquiry[i].current_enquiry_message%></td>
+
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+</div>
+<%- include('footer.ejs') %>

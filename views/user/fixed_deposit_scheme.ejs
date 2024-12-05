@@ -1,0 +1,212 @@
+<%- include('navbar.ejs') %>
+
+
+    <div class="container-fluid  ">
+        <div class="row ">
+            <div class="col-12 p-0">
+                <div class="Bus_sec_FD" data-aos="fade-down" data-aos-duration="1000">
+
+
+                    <section class="blog_bread">
+                        <div class="container py-5 topbar">
+                            <div class="row py-5 ">
+                                <h1 class="text-white text-center">Fixed Deposite Schmes </h1>
+                                <nav class="breadnav " aria-label="breadcrumb">
+                                    <ol class="breadcrumb bg-transparent  justify-content-center">
+                                        <li class="breadcrumb-item fs-5">
+                                            <a class="text-decoration-none text-white" href="/">Home</a>
+                                        </li>
+                                        <li class="breadcrumb-item fs-5">
+                                            <a class="text-decoration-none text-white" href="/deposit_scheme_page">Deposite schmes </a>
+                                        </li>
+                                        <li class="breadcrumb-item fs-5 active text-warning" aria-current="page">
+                                            Fixed Deposit
+                                        </li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </section>
+                    <!--contact breadcrumb end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- breadcrumb end  -->
+
+    <!-- Section Start 1 -->
+    <header>
+        <div class="header-container text-center " data-aos="fade-up" data-aos-duration="1000">
+            <h1>Fixed Deposit - Features and Benefits</h1>
+            <p style="color: black;">Your secure way to invest and earn guaranteed returns</p>
+        </div>
+    </header>
+
+    <section class="benefits ">
+        <div class="container">
+            <h2 style="color: orangered;" data-aos="fade-up" data-aos-duration="1000"> Fixed Deposit</h2>
+            <ul>
+                <li><strong>Guaranteed Returns:</strong> Fixed deposits provide a fixed return, regardless of market fluctuations.</li>
+                <li><strong>Risk-Free Investment:</strong> FDs are one of the safest investment options with low risk.</li>
+                <li><strong>Tax Benefits:</strong> Tax-saving Fixed Deposits offer benefits under Section 80C of the Income Tax Act.</li>
+                <li><strong>Regular Income:</strong> You can opt for monthly, quarterly, or yearly interest payouts to supplement your income.</li>
+                <li><strong>Flexibility:</strong> Choose from a variety of interest payout options and tenure to suit your needs.</li>
+            </ul>
+        </div>
+    </section>
+    <!-- Section End 1 -->
+
+    <!-- Section Two Start -->
+
+    <div class="container">
+        <div class="table-container table-bordered ">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Principal Amount (₹)</th>
+                        <th>Interest Rate (%)</th>
+                        <th>Tenure</th>
+                        <th>Interest Frequency</th>
+                        <th>Interest Earned (₹)</th>
+                        <th>Maturity Amount (₹)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%for(var i=0;i<fixed_deposit_details.length;i++) {%>
+                        <tr>
+                            <td>
+                                <%-fixed_deposit_details[i].principle_amount%>
+                            </td>
+                            <td>
+                                <%-fixed_deposit_details[i].interest_rate%>
+                            </td>
+                            <td>
+                                <%-fixed_deposit_details[i].tenure%>
+                            </td>
+                            <td>
+                                <%-fixed_deposit_details[i].interest_frequency%>
+                            </td>
+                            <td>
+                                <%-fixed_deposit_details[i].interest_earned%>
+                            </td>
+                            <td>
+                                <%-fixed_deposit_details[i].maturity_amount%>
+                            </td>
+                        </tr>
+                        <%}%>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- Section Two End -->
+
+    <!-- Section Three Start -->
+
+
+    <!-- Card  Start -->
+
+    <h2 style="text-align: center; margin-top: 50px;" data-aos="fade-up" data-aos-duration="1000">Features & Benefits</h2>
+    <section class="articles mt-5">
+        <%for(var i=0;i<fixed_deposit_card.length;i++) {%>
+            <article data-aos="fade-up" data-aos-duration="1000">
+                <div class="article-wrapper ">
+                    <figure>
+                        <img style="height:150px ; width: 150px; margin-top: 50px; margin-left: 100px;" src="/uploads/<%= fixed_deposit_card[i].fixed_deposit_card_image %>" alt="" />
+
+                    </figure>
+                    <div class="article-body">
+                        <h2>
+                            <%= fixed_deposit_card[i].fixed_deposit_card_title %>
+                        </h2>
+                        <p>
+                            <%= fixed_deposit_card[i].fixed_deposit_card_details %>
+                        </p>
+                    </div>
+                </div>
+            </article>
+            <%}%>
+    </section>
+
+    <!-- Card End  -->
+    <!-- Section Three End -->
+
+    <!-- Section 4 Start -->
+
+    <div class="container mb-5">
+        <li class="row">
+            <div class="col-md-5 mb-3">
+                <div class="calculator">
+                    <h2>Fixed Deposit Calculator</h2>
+
+                    <div class="form-group">
+                        <label for="principal">Principal Amount (₹):</label>
+                        <input type="number" id="principal" placeholder="Enter principal amount" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="interest">Interest Rate (Annual %):</label>
+                        <input type="number" id="interest" placeholder="Enter interest rate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="years">Tenure (in years):</label>
+                        <input type="number" id="years" placeholder="Enter tenure in years" required>
+                    </div>
+
+                    <div class="form-group">
+                        <button class="calcu_button" onclick="calculateMaturity()">Calculate Maturity Amount</button>
+                    </div>
+
+                    <div class="result">
+                        <h3>Maturity Amount: ₹<span id="maturityAmount">0</span></h3>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-7">
+                <h2 class="mt-5 text-left" data-aos="fade-up" data-aos-duration="1000">Benefits of Fixed Deposits (FD)</h2>
+                <ol class="mt-5 fs-5 ml-5" data-aos="fade-up" data-aos-duration="1000">
+                    <%for(var i=0;i<fixed_deposit_benifits.length;i++) {%>
+                        <li>
+                            <%= fixed_deposit_benifits[i].benifits %>></li>
+                        <%}%>
+                </ol>
+            </div>
+    </div>
+    </div>
+
+
+
+
+
+    <!-- <script src="Service.js"></script>-->
+
+    <script type="text/javascript">
+        function calculateMaturity() {
+            // Get the values from the input fields
+            let principal = parseFloat(document.getElementById('principal').value);
+            let interestRate = parseFloat(document.getElementById('interest').value);
+            let years = parseInt(document.getElementById('years').value);
+
+            // Validate the inputs
+            if (isNaN(principal) || principal <= 0 || isNaN(interestRate) || interestRate <= 0 || isNaN(years) || years <= 0) {
+                alert("Please enter valid values for all fields.");
+                return;
+            }
+
+            // Convert interest rate to decimal (e.g., 5% becomes 0.05)
+            let rate = interestRate / 100;
+
+            // Compound Interest Formula: A = P * (1 + r/n)^(nt)
+            // Assuming interest is compounded annually, n = 1
+            let maturityAmount = principal * Math.pow((1 + rate), years);
+
+            // Display the result
+            document.getElementById('maturityAmount').textContent = maturityAmount.toFixed(2);
+        }
+    </script>
+
+    <%- include('footer.ejs') %>

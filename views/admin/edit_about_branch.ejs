@@ -1,0 +1,44 @@
+<%- include("navbar.ejs") %>
+
+
+<form action="/admin/update_about_branch/<%-branch.about_branch_id%>" enctype="multipart/form-data" method="post">
+    <div class="container-fluid bg-white p-4">
+        <div class="row">
+            <div class="mb-3 col-md-12 text-center">
+                <h3>Add Branch </h3>
+            </div>
+            
+            <div class="mb-3 col-md-6">
+                City
+                <input type="text" name="branch_city" value="<%-branch.branch_city%>"  class="form-control">
+            </div>
+            <div class="mb-3 col-md-6">
+                Branch Header
+                <input type="text" name="branch_header" value="<%-branch.branch_header%>"  class="form-control">
+            </div>
+            <div class="mb-3 col-md-6">
+                Branch Lane
+                <input type="text" name="branch_lane" value="<%-branch.branch_lane%>"  class="form-control">
+            </div>
+            <div class="mb-3 col-md-6">
+                Branch Lane2
+                <input type="text" name="branch_lane2" value="<%-branch.branch_lane2%>"  class="form-control">
+            </div>
+            <div class="mb-3 col-md-6">
+                Dist
+                <input type="text" name="branch_dist" value="<%-branch.branch_dist%>"  class="form-control">
+            </div>
+            <div class="mb-3 col-md-6">
+                Branch Mobile
+                <input type="number"  name="branch_no" value="<%-branch.branch_no%>"  class="form-control">
+            </div>
+            
+            <div class="mb-3 col-md-12 ml-5 text-center">
+                <button class="btn btn-primary">Save Details</button>
+            </div>
+        </div>
+    </div>
+</form><hr>
+
+
+<%- include("footer.ejs") %>

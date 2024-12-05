@@ -1,0 +1,470 @@
+<!-- <h1>Welcome User Index</h1> -->
+<%- include ("navbar.ejs") %>
+
+    <!-- model popup  -->
+
+    <!-- Modal -->
+    <!-- Modal -->
+    <div class="modal fade mdlpopup mt-5" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content position-relative">
+                <!-- Close button positioned absolutely to the top-right -->
+                <button type="button" class=" position-absolute" data-bs-dismiss="modal" aria-label="Close" style="top: -25px; right: -20px;  font-size: 2rem; filter: invert(1); border: none; width: 50px; border-radius: 50%; z-index: 111111; ">
+					<i class="fa-solid fa-xmark"></i>
+            </button>
+
+                <div class="modal-body p-0">
+                    <img src="https://www.dpmahila.com/wp-content/uploads/2024/04/WhatsApp-Image-2024-03-31-at-6.44.01-PM.jpeg" class="img-fluid" alt="Modal Image" style="width: 100%; height: auto; object-fit: contain;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript to show modal -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var myModal = new bootstrap.Modal(document.getElementById('myModal'));
+            myModal.show();
+        });
+    </script>
+
+    <!-- Home Section start  -->
+
+    <div class="container-fluid	 py-4 mb-2">
+        <div class="row">
+            <div class="col-md-8 mb-3">
+                <div id="carouselExampleFade" class="carousel slide  carousel-fade" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <% for(var i=0;i<slider.length;i++) { %>
+
+                            <div class="carousel-item slider-img  active">
+                                <img src="/uploads/<%-slider[i].slider_image%>" class="d-block w-100 object-fit-fill" alt="..." />
+                            </div>
+                            <% } %>
+                    </div>
+                    <button class="carousel-control-prev " type="button " data-bs-target="#carouselExampleFade " data-bs-slide="prev ">
+					  <span class="carousel-control-prev-icon " aria-hidden="true "></span>
+					  <span class="visually-hidden ">Previous</span>
+					</button>
+                    <button class="carousel-control-next " type="button " data-bs-target="#carouselExampleFade " data-bs-slide="next ">
+					  <span class="carousel-control-next-icon " aria-hidden="true "></span>
+					  <span class="visually-hidden ">Next</span>
+					</button>
+                </div>
+
+
+            </div>
+
+            <div class="col-md-4 " data-aos="fade-left" data-aos-duration="1500">
+
+                <form action="/send_enquiry" method="post" enctype="multipart/form-data">
+                    <div class="card card-body homeform rounded-1 ">
+                        <h4 class="text-center mb-5 fw-bold ">Service Are You Looking For?</h4>
+                        <select class="form-select " aria-label="Default select example " name="enquiry_type">
+						<option selected>Select Product..</option>
+						<% for(var i=0;i<loan_scheme.length;i++) { %>
+                       <option value="<%=loan_scheme[i].loan_name%>"><%=loan_scheme[i].loan_name%></option>
+
+     <!-- <a href="/loan_details/<%=loan_scheme[i].loan_type_id%>"><%=loan_scheme[i].loan_name%></a> -->
+                            
+                        <% } %>
+					  </select>
+
+                        <div class="form-floating mt-3 ">
+                            <input type="text " name="name_of_enquired" class="form-control " id="floatingInput " placeholder="User Name " required>
+                            <label for="floatingInput ">Enter Name</label>
+                        </div>
+                        <div class="form-floating mt-3 mb-2 ">
+                            <input type="email " name="email_of_enquired" class="form-control " id="floatingInput " placeholder="name@example.com " required>
+                            <label for="floatingInput ">Email address</label>
+                        </div>
+                        <div class="form-floating ">
+                            <input type="tel" maxlength="10" pattern="\d{10}" oninput="this.value = this.value.replace(/\D/g,'')" inputmode="numeric" name="mobile_of_enquired" class="form-control " id="floatingInput " placeholder="Mobile " required>
+                            <label for="floatingInput ">Mobile</label>
+                        </div>
+                        <input type="hidden" id="currentDate" readonly name="currentdate"><br>
+                        <input type="hidden" id="currentTime" readonly name="currenttime">
+                        <button class="btn btn-primary mt-3 w-75 ml-5 fw-bold mb-1 " style="height: 50px; ">Apply Now</button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Section 2 start slider -->
+    <div class="container-fluid services2 ">
+        <div class="row ">
+            <div class="col-md-12 ">
+                <h2 class="text-center mt-5 mb-3 fw-bold ">Our Services</h2>
+                <span class="section-heading-border text-center border-center mb-4 "></span>
+                <p class="text-center fs-4 mb-5 fw-bold ">We Offer A Wide Variety Of Banking Services</p>
+
+                <div class="container ">
+                    <div class="row ">
+
+                        <div class="col-md-4 serviceinfo1 " data-aos="fade-up" data-aos-duration="1000">
+                            <div class="serv2 ">
+                                <img src="/uploads/<%-home_service_img[0].home_service_image%>" alt="Snow" style="width:90% ">
+                                <a href="/fixed_deposit_scheme">
+                                    <button class="btn  ">Read More <i class="fa-solid fa-arrow-right "></i></button></a>
+                                <h4 class="fs-3 text-center fw-bold mb-5 mt-3 ">
+                                    <%-home_service_img[0].service_image_heading%>
+                                </h4>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 serviceinfo1 " data-aos="fade-up" data-aos-duration="1000">
+                            <div class="serv2 ">
+                                <img src="/uploads/<%-home_service_img[1].home_service_image%>" alt="Snow" style="width:90% ">
+                                <a href="/daily_deposit_scheme">
+                                    <button class="btn  ">Read More <i class="fa-solid fa-arrow-right "></i></button></a>
+                                <h4 class="fs-3 text-center fw-bold mb-5 mt-3 ">
+                                    <%-home_service_img[1].service_image_heading%>
+                                </h4>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 serviceinfo1 " data-aos="fade-up" data-aos-duration="1000">
+                            <div class="serv2 ">
+                                <img src="/uploads/<%-home_service_img[2].home_service_image%>" alt="Snow" style="width:90% ">
+                                <a href="/deposit_scheme_page">
+                                    <button class="btn  ">Read More <i class="fa-solid fa-arrow-right "></i></button></a>
+                                <h4 class="fs-3 text-center fw-bold mb-5 mt-3 ">
+                                    <%-home_service_img[2].service_image_heading%>
+                                </h4>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 serviceinfo1 " data-aos="fade-up" data-aos-duration="1000">
+                            <div class="serv2 ">
+                                <img src="/uploads/<%-home_service_img[3].home_service_image%>" alt="Snow" style="width:90% ">
+                                <a href="/loan_details/2">
+                                    <button class="btn  ">Read More <i class="fa-solid fa-arrow-right "></i></button></a>
+                                <h4 class="fs-3 text-center fw-bold mb-5 mt-3 ">
+                                    <%-home_service_img[3].service_image_heading%>
+                                </h4>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 serviceinfo1 " data-aos="fade-up" data-aos-duration="1000">
+                            <div class="serv2 ">
+                                <img src="/uploads/<%-home_service_img[4].home_service_image%>" alt="Snow" style="width:90% ">
+                                <a href="/loan_details/1">
+                                    <button class="btn  ">Read More <i class="fa-solid fa-arrow-right "></i></button></a>
+                                <h4 class="fs-3 text-center fw-bold mb-5 mt-3 ">
+                                    <%-home_service_img[4].service_image_heading%>
+                                </h4>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 serviceinfo1 " data-aos="fade-up" data-aos-duration="1000">
+                            <div class="serv2 ">
+                                <img src="/uploads/<%-home_service_img[5].home_service_image%>" alt="Snow" style="width:90% ">
+                                <a href="/loan_page">
+                                    <button class="btn  ">Read More <i class="fa-solid fa-arrow-right "></i></button></a>
+                                <h4 class="fs-3 text-center fw-bold mb-5 mt-3 ">
+                                    <%-home_service_img[5].service_image_heading%>
+                                </h4>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Section 2 end slider -->
+    <!-- About info sec3	  -->
+    <div class="container-fluid abinfo">
+        <div class="row">
+            <div class="col-12">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 info1 " data-aos="fade-left" data-aos-duration="1000">
+                            <i class="fa-solid fa-face-smile "></i>
+                            <h2 class="text-center ">Reliable service</h2>
+                            <p class="text-center ">We believe in our customers</p>
+
+                        </div>
+                        <div class="col-md-4 info1" data-aos="fade-up" data-aos-duration="1000">
+                            <i class="fa-solid fa-clock"></i>
+                            <h2 class="text-center ">365 days and 12 hours service</h2>
+                            <p class="text-center ">We Provide Daily 12 Hour Service</p>
+
+                        </div>
+                        <div class="col-md-4 info1" data-aos="fade-right" data-aos-duration="1000">
+                            <i class="fa-solid fa-user-tie"></i>
+                            <h2 class="text-center ">Expert and professional</h2>
+                            <p class="text-center ">Excellent team and support</p>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About info sec3 end -->
+    <!-- About us sec 4  -->
+    <div class="container-fluid about1">
+        <% for(var i=0;i<a_info.length;i++) { %>
+            <div class="row">
+                <div class="col-12">
+                    <div class="container ">
+                        <div class="row">
+                            <div class="col-md-6 about2">
+                                <h2 class=" ml-2 fw-bold ">
+                                    <%-a_info[i].title%>
+                                </h2>
+                                <h4 class="fs-4 ml-2 fw-bold mt-3">
+                                    <%-a_info[i].title_header%>
+                                </h4>
+                                <p class="fs-5 mt-4  ml-2 fw-bold">
+                                    <%- a_info[i].title_detail%>
+                                </p>
+                            </div>
+                            <div class="col-md-4 mt-5 about3">
+                                <div class="about4 ">
+                                    <img class="about3img" src="/uploads/<%-a_info[i].title_image%>" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+    </div>
+    <!-- About us sec 4 end -->
+    <!-- section 5 start -->
+    <section>
+        <div class="conatiner-fluid section5" id="main">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="container mb-5">
+                        <div class="row">
+                            <div class="col-md-3 ourcust text-center" data-aos="fade-right" data-aos-duration="1000">
+                                <i class="fa-solid fa-trophy"></i>
+                                <h2 class=" text-white count" max-data="<%-company_info.award%>">
+                                    <%-company_info.award%>
+                                </h2>
+                                <h2 class="text-white " style="margin-top: -40px;;">____</h2>
+                                <p class=" text-white">Award</p>
+                            </div>
+                            <div class="col-md-3 ourcust text-center" data-aos="fade-right" data-aos-duration="1000">
+                                <i class="fa-solid fa-face-smile"></i>
+                                <h2 class=" text-white count" max-data="<%-company_info.satisfied_member%>">
+                                    <%-company_info.satisfied_member%>
+                                </h2>
+                                <h2 class="text-white " style="margin-top: -40px;">____</h2>
+                                <p class=" text-white">Satisfied members</p>
+                            </div>
+                            <div class="col-md-3 ourcust text-center" data-aos="fade-left" data-aos-duration="1000">
+                                <i class="fa-solid fa-money-bill-trend-up"></i>
+                                <h2 class=" text-white count" max-data="<%-company_info.business%>">
+                                    <%-company_info.business%>
+                                </h2>
+                                <h2 class="text-white " style="margin-top: -40px;;">____</h2>
+                                <p class=" text-white">Business</p>
+                            </div>
+                            <div class="col-md-3 ourcust text-center" data-aos="fade-left" data-aos-duration="1000">
+                                <i class="fa-solid fa-house-chimney"></i>
+                                <h2 class=" text-white count " max-data="<%-company_info.working_branch%>">
+                                    <%-company_info.working_branch%>
+                                </h2>
+                                <h2 class="text-white " style="margin-top: -40px;;">____</h2>
+                                <p class=" text-white">Working Branch</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </section>
+
+    <!-- section 5 end -->
+    <!-- secttion 6 facility start -->
+    <section>
+        <div class="container-fluid " style="background-color: rgb(219, 238, 254);">
+            <div class="row">
+                <div class="col-12 mt-5">
+                    <h1 class="text-center" data-aos="fade-up" data-aos-duration="1000">Facilities We Provide.</h1>
+                    <span class="section-heading-border text-center border-center mb-2 mt-4 "></span>
+                    <!-- Founders Section -->
+                    <section class="py-5">
+                        <div class="container">
+                            <div class="row text-center">
+                                <!-- Founder 1 -->
+                                <% for(var i=0;i<facilities.length;i++) { %>
+                                    <div class="col-md-4 mb-4 ">
+                                        <div class="card founder-card shadow">
+                                            <img src="/uploads/<%-facilities[i].facility_image%>" class="founder-img card-img-top h-100 w-100" alt="Founder 1">
+                                            <div class="card-body ">
+                                                <h5 class="card-title">
+                                                    <%-facilities[i].facility_header%>
+                                                </h5>
+                                                <p class="text-muted">
+                                                    <%-facilities[i].facility_detail%>
+                                                </p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <% } %>
+
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- section 6 facility end -->
+
+
+    <!-- section 7 document start  -->
+
+    <div class="container container1234 py-5">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center mb-4">All You Need To Know</h1>
+            </div>
+            <div class="col-md-12">
+                <div class="card card-body rounded-3 border-0 shadow-lg">
+                    <!-- Custom Tab Navigation -->
+                    <div class="d-flex justify-content-center mb-4">
+                        <button class="tablinks active" id="defaultOpen" onclick="openCity(event, 'features')">
+                <i class="fas fa-thumbs-up"></i> Features
+            </button>
+                        <button class="tablinks" onclick="openCity(event, 'eligibility')">
+                <i class="fas fa-check"></i> Eligibility
+            </button>
+                        <button class="tablinks" onclick="openCity(event, 'documents')">
+                <i class="fas fa-file"></i> Documents
+            </button>
+                    </div>
+
+                    <!-- Tab Content -->
+                    <div id="features" class="tabcontent">
+                        <ul>
+                            <% for (var i=0;i<features.length;i++) { %>
+                                <li><i class="fas fa-clipboard-check"></i>
+                                    <span class="ms-2"><%-features[i].feature%> </span>
+                                </li>
+                                <% } %>
+                        </ul>
+                    </div>
+                    <div id="eligibility" class="tabcontent">
+                        <ul>
+                            <% for (var i=0;i<eligibilities.length;i++) { %>
+                                <li><i class="fas fa-clipboard-check"></i>
+                                    <span class="ms-2"><%-eligibilities[i].eligibility%></span>
+                                </li>
+                                <% } %>
+                        </ul>
+                    </div>
+                    <div id="documents" class="tabcontent">
+                        <ul>
+                            <% for (var i=0;i<documents.length;i++) { %>
+                                <li><i class="fas fa-clipboard-check"></i><span class="ms-2"> <%-documents[i].document%></span></li>
+                                <%  } %>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom JavaScript to manage the tabs -->
+    <script>
+        function openCity(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Open the default tab (Features)
+        document.getElementById("defaultOpen").click();
+    </script>
+
+    <!-- section 7 document end -->
+
+    <!-- Section 8 Vedioes start -->
+    <!-- <h2 class="blogstit">Our blogs On Youtube</h2> -->
+
+    <div class="body ">
+        <div class="container swiper ">
+            <div class="card-wrapper ">
+                <!-- Card slides container -->
+                <ul class="card-list swiper-wrapper p-0 ">
+                    <% for (var i=0;i<videos.length;i++) { %>
+                        <li class="card-item swiper-slide ">
+                            <a href="# " class="card-link ">
+                        <iframe width="480" height="auto" src="<%-videos[i].video_link%>" title="<%-videos[i].video_title%>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="card-image "></iframe>
+                        <p class="badge badge-designer "><%-videos[i].card_title%></p>
+                        <h2 class="card-title "><%-videos[i].video_description%></h2>
+                        <button class="card-button material-symbols-rounded ">arrow_forward</button>
+                    </a>
+                        </li>
+                        <% } %>
+
+                </ul>
+                <!-- Pagination -->
+                <div class="swiper-pagination "></div>
+                <!-- Navigation Buttons -->
+                <div class="swiper-slide-button swiper-button-prev "></div>
+                <div class="swiper-slide-button swiper-button-next "></div>
+            </div>
+        </div>
+        <!-- Linking SwiperJS script -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js "></script>
+        <!-- Linking custom script -->
+        <script src="script.js "></script>
+
+    </div>
+
+    <!-- Section 8 Videoes End -->
+
+    <!-- section 9 slider banking  partners  -->
+    <div class="container-fluid cont23 ">
+        <div class="header ">
+            <h2 class="mt-5 " data-aos="fade-up" data-aos-duration="1000">Our Banking Partners</h2>
+
+        </div>
+        <span class="section-heading-border text-center border-center mb-2 fw-bold mt-3 "></span>
+
+        <div class="scroll-container ">
+            <div class="carousel carousel-primary carousel123 ">
+                <% for(var i=0;i<bank_partner.length;i++) { %>
+                    <img src="/uploads/<%-bank_partner[i].bank_partner_image%>" alt="cat1 " />
+                    <% } %>
+
+
+
+                        <!-- Duplicate set for seamless scrolling -->
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <%- include ("footer.ejs") %>

@@ -1,0 +1,164 @@
+<%- include("navbar.ejs") %>
+
+    <div class="formoving">
+
+        <div class="container-fluid p-0 ">
+            <div class="row ">
+                <div class="col-12">
+                    <!-- background-image: url('/uploads/<%-s_info.service_page_image%>'); style="background-image: url('/uploads/<%-s_info.service_page_image%>'); -->
+                    <div class="bus_sec_services " data-aos="fade-down" data-aos-duration="1000">
+                        <div class="service_section">
+                            <h1 id="service_section_h1 " class="text-white">
+                                <%-s_info.service_page_title%>
+                            </h1>
+
+
+                            <nav class="breadnav " aria-label="breadcrumb">
+                                <ol class="breadcrumb bg-transparent  justify-content-center">
+                                    <li class="breadcrumb-item fs-5">
+                                        <a class="text-decoration-none text-white" href="/">Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item fs-5 active text-warning" aria-current="page">
+                                        Service
+                                    </li>
+                                </ol>
+                            </nav>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid " style="background-color: rgb(60, 60, 204);">
+            <div class="row">
+
+                <div class="col-12 text-center mt-5">
+                    <h2 class="text-white">
+                        <%-s_info.service_page_heading%>
+                    </h2>
+                </div>
+
+                <div class="row justify-content-center mt-4 mb-5">
+                    <!-- Service Card 1 -->
+                    <% for (var i=0; i < services.length; i++) { %>
+                        <div class="col-12 col-md-6 col-lg-4 mb-4" style="position: relative;">
+                            <div class="card s-card p-3" style="position: relative;">
+                                <!-- Top-left icon -->
+                                <div class="banking_id">
+                                    <%- services[i].service_icon %>
+                                </div>
+
+                                <!-- Card Image -->
+                                <img src="/uploads/<%- services[i].service_image %>" id="services_img" alt="Service Image" class="w-100" style="border-radius: 12px;">
+
+                                <!-- Card Content -->
+                                <h2 class="mt-4 service_section_h2" id="LOCKER">
+                                    <%- services[i].service_title %>
+                                </h2>
+                                <h6 class="service_section_h6 mt-2 mb-5 text-center">
+                                    <%- services[i].service_description %>
+                                </h6>
+
+
+                                <div class="text-center" id="button_sss">
+                                    <!-- Add service ID to the button using data-service-id -->
+                                    <a href="javascript:void(0)" class="inquire-btn" data-service-id="<%- services[i].service_title %>" data-bs-toggle="modal" data-bs-target="#registerModal">
+                                        <button class="btn btn-primary" id="button_services">Inquire</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <% } %>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- Only used Bg color -->
+        <div id="overlay" class="overlay"></div>
+        <!--  -->
+        <!-- Modal Used Form -->
+        <!-- Modal Form -->
+        <div class="modal fade" id="registerModal">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content modal-content12">
+                    <div class="modal-header modal-header2 text-white" style="background-color: rgb(73, 73, 200);">
+                        <h2 class="modal-title" id="modal_title">SEND A REQUEST</h2>
+                        <button class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/send_service_inquiry" method="POST" enctype="multipart/form-data">
+                            <dl>
+                                <dt>Full Name</dt>
+                                <dd><input type="text" required class="form-control fc2" placeholder="Name" name="name"></dd>
+
+                                <dt>E-mail</dt>
+                                <dd><input type="email" required class="form-control fc2" placeholder="E-mail" name="email"></dd>
+
+                                <dt>Phone</dt>
+                                <dd><input type="tel" maxlength="10" pattern="\d{10}" oninput="this.value = this.value.replace(/\D/g,'')" inputmode="numeric" required class="form-control fc2" placeholder="Phone" name="phone"></dd>
+
+                                <dt>Information</dt>
+                                <dd><textarea class="form-control fc2" id="modal_textarea" required placeholder="Additional Info" name="information"></textarea></dd>
+
+                                <!-- Hidden input for service ID -->
+                                <input type="hidden" name="service_title" id="service_title">
+                                <input type="hidden" id="currentDate" readonly name="currentdate"><br>
+                                <input type="hidden" id="currentTime" readonly name="currenttime">
+
+
+                                <button class="btn w-100 text-white" style="background-color: rgb(51, 51, 200);" id="button_modal" type="submit">Send</button>
+                            </dl>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    </div>
+
+
+
+
+    </div>
+
+
+
+
+    <script>
+        // Wait for the document to be ready
+        document.addEventListener("DOMContentLoaded", function() {
+            // Select all inquire buttons
+            const inquireButtons = document.querySelectorAll('.inquire-btn');
+
+            // Add event listeners to each button
+            inquireButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Get the service ID from the clicked button
+                    const serviceId = this.getAttribute('data-service-id');
+                    // const serviceId2 = this.getAttribute('data-service-id2');
+
+                    // Set the service ID in the hidden input field in the modal
+                    // document.getElementById('service_id').value = serviceId;
+
+                    document.getElementById('service_title').value = serviceId;
+                });
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+    <%- include("footer.ejs") %>

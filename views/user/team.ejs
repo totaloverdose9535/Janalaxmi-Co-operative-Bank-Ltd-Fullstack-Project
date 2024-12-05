@@ -1,0 +1,110 @@
+<%- include('navbar.ejs') %>
+
+
+
+
+    <div class="container-fluid  ">
+        <div class="row ">
+            <div class="col-12 p-0">
+                <div class="bus_sec_team" data-aos="fade-down" data-aos-duration="1000">
+
+
+                    <section class="blog_bread">
+                        <div class="container py-5 topbar">
+                            <div class="row py-5 ">
+                                <h1 class="text-white text-center">Our Team </h1>
+                                <nav class="breadnav " aria-label="breadcrumb">
+                                    <ol class="breadcrumb bg-transparent  justify-content-center">
+                                        <li class="breadcrumb-item fs-5">
+                                            <a class="text-decoration-none text-white" href="/">Home</a>
+                                        </li>
+                                        <li class="breadcrumb-item fs-5">
+                                            <a class="text-decoration-none text-white" href="#">About</a>
+                                        </li>
+                                        <li class="breadcrumb-item fs-5 active text-warning" aria-current="page">
+                                            Team
+                                        </li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </section>
+                    <!--contact breadcrumb end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- team sec start  -->
+
+
+
+    <div class="container mt-5 ">
+        <p class="text-center team-head-text" data-aos="fade-up" data-aos-duration="1000">Our manager</p>
+        <div class="row justify-content-center">
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card text-center">
+                    <div class="team-image-wrapper" data-aos="fade-up" data-aos-duration="1000">
+                        <img class="team-member-image" src="/uploads/<%= manager_details.manager_image %>" alt="Davis George">
+                    </div>
+                    <p class="name">
+                        <%= manager_details.manager_name %>
+                    </p>
+                    <p class="position">
+                        <%= manager_details.manager_position %>
+                    </p>
+                    <p class="feature-text">
+                        <%= manager_details.manager_details %>
+                    </p>
+                    <div class="social-icons ">
+                        <a href="<%= manager_details.manager_twitter %>" target="_blank">
+                            <i class="fa-brands fa-twitter fs-3"></i>
+                        </a>
+                        <a href="<%= manager_details.manager_facebook %>" target="_blank">
+                            <i class="fa-brands fa-facebook fs-3"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5 mb-5">
+        <p class="text-center team-head-text" data-aos="fade-up" data-aos-duration="1000">Our Team</p>
+        <div class="row justify-content-center">
+
+
+            <% for(var i=0; i<team_members.length;i++) {%>
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="card text-center">
+                        <div class="team-image-wrapper" data-aos="fade-up" data-aos-duration="1000">
+                            <img class="team-member-image" src="/uploads/<%= team_members[i].team_member_image %>" alt="Davis George">
+                        </div>
+                        <p class="name">
+                            <%= team_members[i].team_member_name %>
+                        </p>
+                        <p class="position">
+                            <%= team_members[i].team_member_position %>
+                        </p>
+                        <p class="feature-text">
+                            <%= team_members[i].team_member_details %>
+                        </p>
+                        <div class="social-icons ">
+                            <a href="<%= team_members[i].team_member_twitter %>" target="_blank">
+                                <i class="fa-brands fa-twitter fs-3"></i>
+                            </a>
+                            <a href="<%= team_members[i].team_member_facebook %>" target="_blank">
+                                <i class="fa-brands fa-facebook fs-3"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <%}%>
+
+
+        </div>
+    </div>
+
+    <%- include('footer.ejs') %>

@@ -1,0 +1,56 @@
+<%- include("navbar.ejs") %>
+
+    <!-- Header Section -->
+    <header class="container-fluid ">
+        <div class="row">
+            <div class="col-12 p-0">
+                <section class="contact-section" data-aos="fade-down" data-aos-duration="1000" style="background-image: url('/uploads/<%-notice_info.notice_page_image%>');">
+                    <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6fKqs8i7Aoa4jpr0nJc7AB5two7luYwnZXKZyttnTvoyXh16M" alt="Business Loan Background"> -->
+                    <div class="notice-text">
+                        <section class="blog_bread">
+                            <div class="container py-5 topbar">
+                                <div class="row py-5 ">
+                                    <h1 class="text-white text-center">
+                                        <%-notice_info.notice_page_title%>
+                                    </h1>
+                                    <nav class="breadnav " aria-label="breadcrumb">
+                                        <ol class="breadcrumb bg-transparent  justify-content-center">
+                                            <li class="breadcrumb-item fs-5">
+                                                <a class="text-decoration-none text-white" href="/">Home</a>
+                                            </li>
+                                            <li class="breadcrumb-item fs-5 active text-warning" aria-current="page">
+                                                Notice
+                                            </li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </header>
+    <main class="container">
+        <div class="row">
+            <div class="col-12 notice-img-container">
+                <img id="mainImage" src="https://www.namcobank.in/public/media/Inoperative-Notice_English_09.08eng.jpg" class="main-image" alt="Main Image">
+            </div>
+            <div class="row mt-4 thumbnail-container">
+                <% for (var i=0;i<notice.length;i++) { %>
+                    <div class=" col-4">
+                        <img src="/uploads/<%-notice[i].notice_image%>" class="thumbnail-img" alt="Image " onclick="changeMainImage(this.src)">
+                    </div>
+                    <% } %>
+
+            </div>
+        </div>
+    </main>
+
+
+
+
+
+
+
+    <%- include("footer.ejs") %>

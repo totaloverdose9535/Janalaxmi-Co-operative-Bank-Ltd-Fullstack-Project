@@ -1,0 +1,161 @@
+<%- include('navbar.ejs') %>
+
+
+
+    <div class="container-fluid  ">
+        <div class="row ">
+            <div class="col-12 p-0">
+                <div class="bus_sec_Saving_depo" data-aos="fade-down" data-aos-duration="1000">
+
+
+                    <section class="blog_bread">
+                        <div class="container py-5 topbar">
+                            <div class="row py-5 ">
+                                <h1 class="text-white text-center">Saving Deposite Information</h1>
+                                <nav class="breadnav " aria-label="breadcrumb">
+                                    <ol class="breadcrumb bg-transparent  justify-content-center">
+                                        <li class="breadcrumb-item fs-5">
+                                            <a class="text-decoration-none text-white" href="/">Home</a>
+                                        </li>
+                                        <li class="breadcrumb-item fs-5">
+                                            <a class="text-decoration-none text-white" href="/deposit_scheme_page">Deposite Schmes</a>
+                                        </li>
+                                        <li class="breadcrumb-item fs-5 active text-warning" aria-current="page">
+                                            Saving Account
+                                        </li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </section>
+                    <!--contact breadcrumb end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Slider End -->
+
+    <!-- {/* About Start */} -->
+
+    <div class="site-section cta-big-image" id="about-section">
+        <div class="container">
+            <div class="row mb-5 justify-content-center">
+                <div class="col-md-8 text-center">
+                    <h2 class="section-title mb-3" data-aos="fade-up" data-aos-delay="" style="color: orange; font-weight: bold; margin-top: 40px;">Saving Deposite</h2>
+                    <!-- <i class="fa-solid fa-arrow-right"></i> -->
+                    <p>Saving money habit improves the quality of life and helps you one to feel better and secured. One will be happier knowing he/she has some money aside for unexpected expenses and look forward to achieve some of their dreams. Here Samata
+                        Patsanstha has introduced uniquely designed "Saving Account" to inbuilt the habit of saving among people</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="">
+                    <figure class="circle-bg">
+                        <img src="/uploads/<%= saving_image.saving_deposit_image %>" height="100px" alt="Free Website Template by Free-Template.co" class="img-fluid"></img>
+                    </figure>
+                </div>
+                <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="100">
+                    <h2 class="text-black mb-4">Saving deposits are fixed-term investments offered by banks and financial institutions. </h2>
+
+                    <% for(var i=0;i<saving_details.length;i++) { %>
+                        <i class="fa-regular fa-circle-right"><p style="font-weight: normal; margin-left: 25px; margin-top: -20px;"><%= saving_details[i].saving_deposit_details %></p></i><br></br>
+                        <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- {/* About End */} -->
+
+    <!-- Table  Start -->
+    <Section>
+        <div class="container mb-5">
+            <div class="row">
+                <div class="col-md-12 tablesving">
+                    <h2 class="text-center mb-4">Monthly Saving Schmes </h2>
+
+                    <table width="100%" style="border: 1px solid black;" cellpadding="20px" cellspacing="30px">
+
+                        <tr heigth="50%" bgcolor="grenn">
+                            <td bgcolor="grenn" style=" text-align: center; padding: 10px;">Monthly Deposit</td>
+                            <td style=" text-align: center; padding: 10px;">12 Months</td>
+                            <td style="text-align: center;">24 Months</td>
+                            <td style="text-align: center;">36 Months</td>
+                            <td style="text-align: center;">48 Months</td>
+                            <td style="text-align: center;">60 Months</td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: aquamarine; text-align: center;">1000</td>
+                            <td style="text-align: center;  padding: 10px;">1110</td>
+                            <td style="text-align: center;  padding: 10px;">1220</td>
+                            <td style="text-align: center;  padding: 10px;">1230</td>
+                            <td style="text-align: center;  padding: 10px;">1440</td>
+                            <td style="text-align: center;  padding: 10px;">1550</td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: aquamarine; text-align: center;">2000</td>
+                            <td style="text-align: center;  padding: 10px;">2220</td>
+                            <td style="text-align: center;  padding: 10px;">2440</td>
+                            <td style="text-align: center;  padding: 10px;">2660</td>
+                            <td style="text-align: center;  padding: 10px;">2880</td>
+                            <td style="text-align: center;  padding: 10px;">30000</td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: aquamarine; text-align: center;">5000</td>
+                            <td style="text-align: center;  padding: 10px;">5550</td>
+                            <td style="text-align: center;  padding: 10px;">6100</td>
+                            <td style="text-align: center;  padding: 10px;">6650</td>
+                            <td style="text-align: center;  padding: 10px;">7200</td>
+                            <td style="text-align: center;  padding: 10px;">7750</td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: aquamarine; text-align: center;">10000</td>
+                            <td style="text-align: center;  padding: 10px;">11100</td>
+                            <td style="text-align: center;  padding: 10px;">12200</td>
+                            <td style="text-align: center;  padding: 10px;">13300</td>
+                            <td style="text-align: center;  padding: 10px;">14400</td>
+                            <td style="text-align: center;  padding: 10px;">15500</td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: aquamarine; text-align: center;">20000</td>
+                            <td style="text-align: center;  padding: 10px;">22200</td>
+                            <td style="text-align: center;  padding: 10px;">24400</td>
+                            <td style="text-align: center;  padding: 10px;">26600</td>
+                            <td style="text-align: center;  padding: 10px;">28800</td>
+                            <td style="text-align: center;  padding: 10px;">31000</td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: aquamarine; text-align: center;">25000</td>
+                            <td style="text-align: center;  padding: 10px;">27750</td>
+                            <td style="text-align: center;  padding: 10px;">30500</td>
+                            <td style="text-align: center;  padding: 10px;">33250</td>
+                            <td style="text-align: center;  padding: 10px;">36000</td>
+                            <td style="text-align: center;  padding: 10px;">38750</td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: aquamarine; text-align: center;">50000</td>
+                            <td style="text-align: center;  padding: 10px;">55500</td>
+                            <td style="text-align: center;  padding: 10px;">61000</td>
+                            <td style="text-align: center;  padding: 10px;">66500</td>
+                            <td style="text-align: center;  padding: 10px;">72000</td>
+                            <td style="text-align: center;  padding: 10px;">77500</td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: aquamarine; text-align: center; ;">100000</td>
+                            <td style="text-align: center;  padding: 10px;">111000</td>
+                            <td style="text-align: center;  padding: 10px;">122000</td>
+                            <td style="text-align: center;  padding: 10px;">133000</td>
+                            <td style="text-align: center;  padding: 10px;">144000</td>
+                            <td style="text-align: center;  padding: 10px;">155000</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </Section>
+    <!-- Table End -->
+
+    <%- include('footer.ejs') %>

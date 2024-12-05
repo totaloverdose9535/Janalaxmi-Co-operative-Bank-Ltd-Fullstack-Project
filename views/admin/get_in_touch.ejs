@@ -1,0 +1,38 @@
+<%- include("navbar.ejs") %>
+
+<form action="/admin/save_get_in_touch" enctype="multipart/form-data" method="post">
+    <div class="container-fluid bg-white p-4">
+        <div class="row">
+            <div class="mb-3 col-md-12 col-sm-12 text-center">
+                <h3> Get In Touch</h3>
+            </div>
+           
+            <div class="mb-5 col-md-12 col-sm-12">
+                Head Office Full Address
+                <textarea name="head_office_address"  class="form-control" style="height: 100px;">
+                    <%-get_touch.head_office_address%>
+                </textarea>
+            </div>
+            <div class="mb-4 col-md-3 col-sm-12">
+                Contact No.
+                <input type="number" name="contact_no" value="<%-get_touch.contact_no%>" class="form-control">
+            </div>
+            <div class="mb-4 col-md-4 col-sm-12">
+                Email Address
+                <input type="email" name="email" value="<%-get_touch.email%>"  class="form-control">
+            </div>
+            <div class="mb-4 col-md-5 col-sm-12">
+                Timming
+                <textarea name="time" class="form-control"><%-get_touch.time%></textarea>
+                <!-- <input type="text" name="time" value="" class="form-control"> -->
+            </div>
+            
+
+            <div class="col-md-12 text-center mt-2">
+                <button class="btn btn-primary btn-lg">Save </button>
+            </div>
+        </div>
+    </div>
+</form><br><hr>
+
+<%- include("footer.ejs") %>

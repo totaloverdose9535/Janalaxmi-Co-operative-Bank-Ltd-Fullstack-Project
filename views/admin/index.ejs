@@ -1,0 +1,77 @@
+<%- include("navbar.ejs") %>
+
+<div class="container shadow ">
+
+<div class="row mt-2 card-body mt-2  ">
+    <div class="col-md-6 mt-5 ">
+        <div class="container-fluid">
+            <div class="row">
+                <a href="/admin/enquiry" class="text-center text-dark" >
+                    <div class="col-md-12 card-body card pt-3">
+                        <p class="fs-3 text-center fw-bold">Home Page Enquires </p>
+                        <p class="fs-3 text-center fw-bold text-danger"><%= home_page_enq.no_of_enquires %></p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mt-5 ">
+        <div class="container-fluid">
+            <div class="row">
+                <a href="/admin/service_enquiry" class="text-center text-dark" >
+                    <div class="col-md-12 card-body card pt-3">
+                        <p class="fs-3 text-center fw-bold">Service Page Enquires </p>
+                        <p class="fs-3 text-center fw-bold text-danger"><%= service_page_enq.no_of_enquires %></p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mt-5 ">
+        <div class="container-fluid">
+            <div class="row">
+                <a href="/admin/loan_enquiry" class="text-center text-dark" >
+                    <div class="col-md-12 card-body card pt-3">
+                        <p class="fs-3 text-center fw-bold">Loan Page Enquires</p>
+                        <p class="fs-3 text-center fw-bold text-danger"><%= loan_enquires.no_of_enquires %></p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mt-5 ">
+        <div class="container-fluid">
+            <div class="row">
+                <a href="/admin/current_deposite_enquiry" class="text-center text-dark" >
+                    <div class="col-md-12 card-body card pt-3">
+                        <p class="fs-3 text-center fw-bold">Deposit Page Enquires</p>
+                        <p class="fs-3 text-center fw-bold text-danger"><%= deposit_enquires.no_of_enquires %></p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mt-5 ">
+        <div class="container-fluid">
+            <div class="row">
+                <a href="/admin/contact_enquiry" class="text-center text-dark" >
+                    <div class="col-md-12 card-body card pt-3">
+                        <p class="fs-3 text-center fw-bold">Contact Page Enquires</p>
+                        <p class="fs-3 text-center fw-bold text-danger"><%= contact_enquires.no_of_enquires %></p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+    <%- include("footer.ejs") %>

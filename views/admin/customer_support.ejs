@@ -1,0 +1,49 @@
+<%- include("navbar.ejs") %>
+
+<div class="container-fluid bg-white p-4">
+    <div class="row">
+        <div class="mb-3 col-md-12 text-center">
+            <h3>For Customer Supports</h3>
+        </div><hr>
+
+      <% for(var i=0;i<c_support.length;i++) { %>
+
+        <div class="col-md-4">
+            <div class="card">
+              <div class="card-header bg-white">
+              <span style="font-weight: bold;"> Name: </span><br><%- c_support[i].customer_name %><br>
+               <span style="font-weight: bold;"> Email: </span><br><%- c_support[i].customer_email %><br>
+               <span style="font-weight: bold;"> Mobile: </span><br><%- c_support[i].customer_mobile %><br>
+              <span style="font-weight: bold;"> Address:</span><br>  <%- c_support[i].customer_address %><br>
+              </div>
+              <div class="card-body">
+                <span style="font-weight: bold;">Query : </span><br> <%- c_support[i].customer_query %><br>
+              </div>
+              <div class="card-footer">
+                    <a href="complete_customer_support/<%-c_support[i].customer_support_id%>">
+                    <button class="btn btn-sm btn-primary ">Complete</button>
+                    </a>      
+              </div>
+            </div>
+          </div>
+
+        <% } %>
+
+    </div>
+</div>
+
+
+
+
+
+<%- include("footer.ejs") %>
+
+
+
+
+   
+     
+      
+     
+   
+

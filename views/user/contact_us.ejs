@@ -1,0 +1,113 @@
+<%- include("navbar.ejs") %>
+
+    <div class="formoving">
+
+        <div class="container-fluid p-0">
+            <div class="row">
+                <div class="col-12 p-0">
+                    <div class=" Contact_section" data-aos="fade-down" data-aos-duration="1000">
+                        <!-- <img id="img" src="https://media.istockphoto.com/id/1416335096/photo/businessman-hand-holding-smart-phone-with-icon-mobile-phone-mail-telephone-and-address.jpg?s=612x612&w=0&k=20&c=ajOYHJPqlaKZ04BeSf5m3MsuZ_YGyxrUqEGMaS1hGGk=" alt="Business Loan Background"> -->
+
+                        <div class="loan_section_text">
+                            <h1 id="h11">Contact us</h1>
+                            <nav class="breadnav " aria-label="breadcrumb">
+                                <ol class="breadcrumb bg-transparent  justify-content-center">
+                                    <li class="breadcrumb-item fs-5">
+                                        <a class="text-decoration-none text-white" href="/">Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item fs-5 active text-warning" aria-current="page">
+                                        Contact Us
+                                    </li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end breadcrumb section -->
+
+        <!-- contact form -->
+        <div class="contact-from-section mt-150  mb-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mb-5 mb-lg-0">
+                        <div class="form-title">
+                            <h2 class="fw-bold" id="bank_contact_info">Bank Contact Information</h2>
+                            <p id="text_main">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, ratione! Laboriosam est, assumenda. Perferendis, quo alias quaerat aliquid. Corporis ipsum minus voluptate? Dolore, esse natus!</p>
+                        </div>
+                        <div id="form_status"></div>
+                        <div class="contact-form">
+
+                            <form id="fruitkha-contact" class="form" onSubmit="return valid_datas( this );" method="post" action="/contact_enquiry">
+                                <p id="p">
+                                    <input type="text" placeholder="Name" class="input" name="contact_enq_name" id="name" required>
+                                    <input type="email" placeholder="Email" class="input" name="contact_enq_email" id="email" required>
+                                </p>
+                                <p id="p">
+                                    <input maxlength="10" pattern="\d{10}" oninput="this.value = this.value.replace(/\D/g,'')" inputmode="numeric" type="tel" placeholder="Mobile No" class="input" name="contact_enq_mobile" id="phone" required>
+                                    <input type="text" placeholder="Subject" class="input" name="contact_enq_subject" id="subject" required>
+                                </p>
+                                <p id="p"><textarea name="contact_enq_message" class="textarea" id="message" cols="28" rows="10" placeholder="Message" required></textarea></p>
+
+                                <button class="btn btn-warning ">Submit Messages</button>
+                            </form>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="contact-form-wrap">
+                            <div class="contact-form-box">
+                                <h4 id="h4"><i class="fa fa-location-dot" id="i"></i> Bank Address</h4>
+                                <p id="p">
+                                    <%= company_info.company_address %>
+                                </p>
+                            </div>
+                            <div class="contact-form-box">
+                                <h4 id="h4"><i class="fa-solid fa-business-time" id="i"></i> Bank Time</h4>
+                                <p id="p">MON - FRIDAY: 8 to 9 PM <br> SAT - SUN: 10 to 8 PM </p>
+                            </div>
+                            <div class="contact-form-box">
+                                <h4 id="h4"><i class="fa fa-user" id="i"></i> Contact</h4>
+                                <p id="p">Phone:<a style="text-decoration: none;" class="text-dark" href="<%= company_info.company_mobile %>"> Call <%= company_info.company_mobile %></a> <br> Email:
+                                    <a style="text-decoration: none;" class="text-dark" href="<%= company_info.company_email %>">
+                                        <%= company_info.company_email %>
+                                    </a>
+                                </p>
+                            </div>
+                            <div class="contact-form-box">
+                                <h4>Online Platform</h4>
+                                <a href="<%= company_info.instagram_link %>" class="icon" id="instagram">
+                                    <i class="fa-brands fa-instagram"></i> </a>
+                                <a href="<%= company_info.whatsapp_no %>" class="icon" id="whatsapp">
+                                    <i class="fa-brands fa-whatsapp"></i> </a>
+                                <a href="<%= company_info.linkedin_link %>" class="icon" id="linkedin">
+                                    <i class="fa-brands fa-linkedin"></i> </a>
+                                <a href="<%= company_info.company_mobile %>" class="icon" id="telephone">
+                                    <i class="fa-solid fa-phone"></i> </a>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="paragraphfaq mb-4 mt-3">
+            <p class="text-center mb-4 fs-4 fw-bold"> We're Do You Help With Any Questions of our customers , Go To <a href="/faq" class="text-decoration-none">FAQ's</a> </p>
+        </div>
+        <!--map-->
+
+        <!-- Google Map Column -->
+        <div class="col-12 col-lg-12 ">
+            <div class="ratio" style="height: 450px; box-shadow: 2px 2px 2px 5px gray; margin-bottom: 100px; padding: 0px;">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.2515055384033!2d73.9372298!3d18.5626966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c0e29dda565d%3A0xb699f26308e274f4!2sNagar%20Rd%2C%20Pune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1729268992180!5m2!1sen!2sin"
+                    allowfullscreen style="border: 0; width: 100%; height: 100%; "></iframe>
+            </div>
+        </div>
+
+
+    </div>
+
+    <%- include("footer.ejs") %>

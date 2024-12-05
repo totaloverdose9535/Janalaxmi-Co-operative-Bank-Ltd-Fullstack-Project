@@ -1,0 +1,79 @@
+<%- include('navbar.ejs') %>
+
+<!--term image form  -->
+<form action="/admin/save_saving_deposit_scheme_image" method="post" enctype="multipart/form-data">
+    <div class="container-fluid bg-white p-4">
+        <div class="row">
+            <div class="mb-3 col-md-12 text-center">
+                <h3>Add Saving Deposit Schemes Image</h3>
+            </div>
+            
+            <div class="mb-3 col-12">
+                Saving Deposit Image
+                <input type="file" name="saving_deposit_image" class="form-control pb-5" accept="image/*">
+            </div>
+            <img src="/uploads/<%= saving_image.saving_deposit_image %>" width="330px">
+            <div class="mb-3 col-12 text-center">
+                <button class="btn btn-primary">Save Image</button>
+            </div>
+        </div>
+    </div>
+    </form>
+
+
+    <!-- saving details form  -->
+    <br><br>
+<form action="/admin/save_saving_deposit_scheme_details" method="post" enctype="multipart/form-data">
+    <div class="container-fluid bg-white p-4">
+        <div class="row">
+            <div class="mb-3 col-md-12 text-center">
+                <h3>Add Saving Deposit Schemes Details</h3>
+            </div>
+            
+  
+            <div class="mb-3 col-12">
+                Saving Deposit Details
+                <input type="text" name="saving_deposit_details" class="form-control">
+            </div>
+    
+            <div class="mb-3 col-12 text-center">
+                <button class="btn btn-primary">Save Details</button>
+            </div>
+        </div>
+    </div>
+    </form>
+
+
+    <!-- term details table -->
+
+    <br><br>
+    <div class="container-fluid bg-white p-4">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3>Saving Deposit Scheme Details</h3>
+                <br>
+            </div>
+            <div class="col-md-12">
+                <table class="table table-sm table-bordered">
+                    <tr>
+                        <th>Action</th>
+                        <th>SN</th>
+                        <th>Details</th>
+                    </tr>
+                    <% for(i=0;i<saving_details.length;i++) { %>
+    
+                        <tr>
+                            <td style="white-space: nowrap;">
+                                <a href="/admin/delete_saving_details/<%- saving_details[i].saving_deposit_scheme_id %>">
+                                    <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                                </a>  
+                            </td>
+                            <td><%-i+1%></td>
+                            <td><%-saving_details[i].saving_deposit_details%></td>    
+                        </tr>
+                    <% } %>
+                </table>
+            </div>
+        </div>
+    </div> 
+<%- include('footer.ejs') %>

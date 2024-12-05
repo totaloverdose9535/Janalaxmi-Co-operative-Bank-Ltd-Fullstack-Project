@@ -1,0 +1,58 @@
+<%- include('navbar.ejs') %>
+
+
+
+<div class="container mt-5 mb-3">
+    <h2>Export and Print Page</h2>
+    <button class="btn btn-primary" onclick="copyText()">Copy Text</button>
+    <button class="btn btn-success" onclick="downloadCSV()">Download CSV</button>
+    <button class="btn btn-info" onclick="downloadExcel()">Download Excel</button>
+    <button class="btn btn-danger" onclick="downloadPDF()">Download PDF</button>
+    <button class="btn btn-warning" onclick="printPage()">Print Page</button>
+</div>
+
+
+
+<div id="content" class="container-fluid bg-white p-4">
+    <div class="row">
+        <div class="mb-3 col-md-12 text-center">
+            <h3>Contact Enquiry list</h3>
+        </div>
+        <div class="mb-3 col-md-12">
+            <table class="table table-sm table-bordered" >
+                <tr>
+                    <th>Action</th>
+                    <th>Sr.no</th>
+                    <th>Enquirer Name</th>
+                    <th>Enquirer Email</th>
+                    <th>Enquirer Mobile No</th>
+                    <th>Enquirer Subject</th>
+                    <th>Enquirer Message</th>
+
+                </tr>
+                <% for(var i=0; i<contact_enquiry.length; i++) {%>
+                <tr>
+                    <td>
+                        <a href="/admin/delete_contact_enquiry_details/<%=contact_enquiry[i].contact_enq_id%>" title="Delete Enquiry Type">
+                            <button class="btn btn-sm btn-danger" onclick="alert('Are You Sure...?')">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </a>
+                    </td>
+                    <td><%= 1+i %></td>
+                    <td><%= contact_enquiry[i].contact_enq_name %></td>
+                    <td><%= contact_enquiry[i].contact_enq_email %></td>
+                    <td><%= contact_enquiry[i].contact_enq_mobile %></td>
+                    <td><%= contact_enquiry[i].contact_enq_subject %></td>
+                    <td><%= contact_enquiry[i].contact_enq_message %></td>
+                </tr>
+                <% } %>
+            </table>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<%- include('footer.ejs') %>
